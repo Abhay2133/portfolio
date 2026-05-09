@@ -8,20 +8,20 @@ export function Hero() {
       transition={{ duration: 0.5 }}
       className="pt-4 sm:pt-8"
     >
-      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 mb-5">
+      <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-5">
         Hi, I'm Abhay Bisht.
       </h1>
-      <p className="text-neutral-600 leading-relaxed text-balance sm:text-lg max-w-xl">
+      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-balance sm:text-lg max-w-xl">
         I am a Full Stack Developer experienced in React, Node.js, and PostgreSQL. 
         I focus on creating impactful digital experiences, building robust systems, 
         and writing clean, maintainable code.
       </p>
       
       <div className="mt-10 flex flex-wrap gap-4">
-        <a href="#projects" className="text-sm font-medium bg-neutral-900 text-white px-6 py-2.5 rounded-full shadow-md hover:bg-neutral-800 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+        <a href="#projects" className="text-sm font-medium bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 px-6 py-2.5 rounded-full shadow-md hover:bg-neutral-800 dark:hover:bg-white hover:shadow-lg hover:-translate-y-0.5 transition-all">
           View Projects
         </a>
-        <a href="/resumes/Resume_Abhay-Bisht.pdf" target="_blank" className="text-sm font-medium bg-white border border-neutral-200 px-6 py-2.5 rounded-full shadow-sm hover:border-neutral-300 hover:shadow-md hover:-translate-y-0.5 transition-all text-neutral-800">
+        <a href="/resumes/Resume_Abhay-Bisht.pdf" target="_blank" className="text-sm font-medium bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-6 py-2.5 rounded-full shadow-sm hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md hover:-translate-y-0.5 transition-all text-neutral-800 dark:text-neutral-200">
           Resume
         </a>
       </div>
