@@ -38,29 +38,46 @@ export function SimpleCarCursor() {
     const animate = () => {
       if (!carRef.current) return;
 
-      // Easing/Damping parameters
-      const damping = 0.02; // Adjusted for slower, heavier feel
+      // --- Driving Physics Constants ---
+      const baseSpeed = 4; // Constant forward speed
+      const turnSpeed = 0.08; // How fast the car can steer (radians)
+      const stopDistance = 40; // Stop driving when close to cursor
       
-      // Calculate distance to mouse
+      // Calculate vector to mouse
       const dx = mousePos.current.x - carPos.current.x;
       const dy = mousePos.current.y - carPos.current.y;
-      
-      // Move car position towards mouse with damping
-      carPos.current.x += dx * damping;
-      carPos.current.y += dy * damping;
+      const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Calculate target angle
-      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
-        const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+      // 1. Steering Logic
+      if (distance > 5) { // Only steer if there's significant distance
+        const targetAngle = Math.atan2(dy, dx); // Angle in radians
         
-        // Smooth rotation for a more natural heavy car turn
-        const angleDiff = targetAngle - carAngle.current;
-        const normalizedDiff = ((angleDiff + 180) % 360) - 180;
-        carAngle.current += normalizedDiff * 0.1;
+        // Find the shortest turn direction
+        let angleDiff = targetAngle - carAngle.current;
+        // Normalize angle difference to (-PI, PI]
+        while (angleDiff > Math.PI) angleDiff -= Math.PI * 2;
+        while (angleDiff < -Math.PI) angleDiff += Math.PI * 2;
+
+        // Apply steering (clamped to max turn speed)
+        const steeringForce = Math.max(-turnSpeed, Math.min(turnSpeed, angleDiff));
+        carAngle.current += steeringForce;
       }
 
-      // Apply transformations
-      carRef.current.style.transform = `translate3d(${carPos.current.x}px, ${carPos.current.y}px, 0) rotate(${carAngle.current}deg)`;
+      // 2. Forward Movement Logic
+      if (distance > stopDistance) {
+        // Drive forward based on current angle
+        carPos.current.x += Math.cos(carAngle.current) * baseSpeed;
+        carPos.current.y += Math.sin(carAngle.current) * baseSpeed;
+      } else if (distance > 5) {
+        // Slower movement when very close to mouse for precision
+        const slowSpeed = baseSpeed * (distance / stopDistance);
+        carPos.current.x += Math.cos(carAngle.current) * slowSpeed;
+        carPos.current.y += Math.sin(carAngle.current) * slowSpeed;
+      }
+
+      // 3. Render
+      const angleInDegrees = carAngle.current * (180 / Math.PI);
+      carRef.current.style.transform = `translate3d(${carPos.current.x}px, ${carPos.current.y}px, 0) rotate(${angleInDegrees}deg)`;
 
       animationFrameId = requestAnimationFrame(animate);
     };
