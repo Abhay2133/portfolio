@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Moon, Sun, Car } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Tooltip } from "./ui/Tooltip";
 
 interface NavigationProps {
   onToggleCar: () => void;
@@ -42,31 +43,53 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
         Abhay Bisht
       </div>
       <div className="flex gap-4 items-center px-2">
-        <button 
-          onClick={onToggleCar}
-          className={`transition-all mr-1 p-1 rounded-md ${
-            isCarVisible 
-              ? "text-blue-500 bg-blue-500/10" 
-              : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-          }`}
-          aria-label="Toggle Car Follower"
-          title="Toggle Car Follower"
-        >
-          <Car className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
-        <button 
-          onClick={toggleTheme} 
-          className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all mr-2"
-          aria-label="Toggle Dark Mode"
-        >
-          {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
-        </button>
-        <a href="https://github.com/abhay2133" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:scale-110 transition-all">
-          <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-        </a>
-        <a href="https://www.linkedin.com/in/abhay-21m" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400 hover:scale-110 transition-all">
-          <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-        </a>
+        <Tooltip content={isCarVisible ? "Disable Car" : "Enable Car"}>
+          <button 
+            onClick={onToggleCar}
+            className={`transition-all p-1 rounded-md ${
+              isCarVisible 
+                ? "text-blue-500 bg-blue-500/10" 
+                : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+            }`}
+            aria-label="Toggle Car Follower"
+          >
+            <Car className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
+        </Tooltip>
+
+        <Tooltip content={isDark ? "Light Mode" : "Dark Mode"}>
+          <button 
+            onClick={toggleTheme} 
+            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all p-1"
+            aria-label="Toggle Dark Mode"
+          >
+            {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
+          </button>
+        </Tooltip>
+
+        <Tooltip content="GitHub Profile">
+          <a 
+            href="https://github.com/abhay2133" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:scale-110 transition-all p-1"
+            aria-label="GitHub"
+          >
+            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+          </a>
+        </Tooltip>
+
+        <Tooltip content="LinkedIn Profile">
+          <a 
+            href="https://www.linkedin.com/in/abhay-21m" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-neutral-500 hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400 hover:scale-110 transition-all p-1"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+          </a>
+        </Tooltip>
       </div>
     </motion.nav>
   );
