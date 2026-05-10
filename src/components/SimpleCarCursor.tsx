@@ -55,32 +55,39 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
       if (!carRef.current) return;
 
       // --- Driving Physics Constants ---
-      const baseSpeed = 5; 
-      const turnSpeed = 0.12; 
-      const reachThreshold = 25; // Distance to "consume" a point
+      const minSpeed = 1.6; 
+      const maxSpeed = 6.5; 
+      const maxTurnSpeed = 0.18; 
+      const reachThreshold = 35; // Slightly larger to prevent orbital locks
+      const turnDamping = 0.15; // Smoother steering response
       
       if (pathQueue.current.length > 0) {
         const target = pathQueue.current[0];
         
-        // Calculate vector to current target point
         const dx = target.x - carPos.current.x;
         const dy = target.y - carPos.current.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // 1. Steering Logic
+        // 1. Steering Logic with Damping
         const targetAngle = Math.atan2(dy, dx);
         let angleDiff = targetAngle - carAngle.current;
         while (angleDiff > Math.PI) angleDiff -= Math.PI * 2;
         while (angleDiff < -Math.PI) angleDiff += Math.PI * 2;
 
-        const steeringForce = Math.max(-turnSpeed, Math.min(turnSpeed, angleDiff));
-        carAngle.current += steeringForce;
+        const steeringForce = angleDiff * turnDamping;
+        const clampedSteering = Math.max(-maxTurnSpeed, Math.min(maxTurnSpeed, steeringForce));
+        carAngle.current += clampedSteering;
 
-        // 2. Forward Movement
-        carPos.current.x += Math.cos(carAngle.current) * baseSpeed;
-        carPos.current.y += Math.sin(carAngle.current) * baseSpeed;
+        // 2. Variable Speed
+        // Slow down as we reach the point to allow for tighter turning circle
+        const distanceFactor = Math.min(distance / 250, 1);
+        const currentSpeed = minSpeed + (maxSpeed - minSpeed) * distanceFactor;
 
-        // 3. Dequeue Logic
+        // 3. Forward Movement
+        carPos.current.x += Math.cos(carAngle.current) * currentSpeed;
+        carPos.current.y += Math.sin(carAngle.current) * currentSpeed;
+
+        // 4. Dequeue Logic
         if (distance < reachThreshold) {
           pathQueue.current.shift();
         }
@@ -155,18 +162,18 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
             </linearGradient>
             <style>
               {`
-                .stop-color-headlight-start { stop-color: rgba(255, 255, 180, 0.4); }
-                .stop-color-headlight-end { stop-color: rgba(255, 255, 180, 0); }
-                .dark .stop-color-headlight-start { stop-color: rgba(255, 255, 220, 0.6); }
-                .dark .stop-color-headlight-end { stop-color: rgba(255, 255, 220, 0); }
+                .stop-color-headlight-start { stop-color: rgba(255, 230, 100, 0.8); }
+                .stop-color-headlight-end { stop-color: rgba(255, 230, 100, 0); }
+                .dark .stop-color-headlight-start { stop-color: rgba(255, 255, 200, 0.7); }
+                .dark .stop-color-headlight-end { stop-color: rgba(255, 255, 200, 0); }
               `}
             </style>
           </defs>
 
           {/* Headlight Beams */}
           <g ref={headlightRef} style={{ transition: 'opacity 0.3s ease', opacity: 0 }}>
-            <path d="M48,7 L100,-10 L100,10 L48,9 Z" fill="url(#headlightGradient)" />
-            <path d="M48,18 L100,15 L100,35 L48,16 Z" fill="url(#headlightGradient)" />
+            <path d="M48,5 L110,-15 L110,15 L48,9 Z" fill="url(#headlightGradient)" />
+            <path d="M48,16 L110,10 L110,40 L48,20 Z" fill="url(#headlightGradient)" />
           </g>
 
           {/* Ford Mustang Silhouette - Top Down */}
@@ -184,8 +191,8 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
           {/* Windshield */}
           <path d="M22,6 L28,6 L28,19 L22,19 Z" fill="#44CCFF" opacity="0.6" />
           {/* Headlights */}
-          <rect x="46" y="5" width="2" height="4" rx="0.5" fill="#FFFFEE" />
-          <rect x="46" y="16" width="2" height="4" rx="0.5" fill="#FFFFEE" />
+          <rect x="46" y="5" width="2" height="4" rx="0.5" fill="#FFD700" className="opacity-90 dark:opacity-100" />
+          <rect x="46" y="16" width="2" height="4" rx="0.5" fill="#FFD700" className="opacity-90 dark:opacity-100" />
           {/* Iconic Tri-Bar Taillights */}
           <g opacity="0.9">
             <rect x="3" y="6" width="1" height="3" fill="#EE0000" />
