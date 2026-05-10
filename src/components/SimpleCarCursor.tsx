@@ -113,14 +113,19 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
           setIsBraking(false);
         }
 
-        // 3. Steering Logic with Damping
+        // 3. Steering Logic with Speed-Dependent flexibility
+        // The faster we go, the less we can turn (simulating understeering and stability)
+        const speedNormalized = (currentSpeed.current - minSpeed) / (maxSpeed - minSpeed);
+        // Turn speed ranges from maxTurnSpeed (at low speed) to a significantly lower value (at high speed)
+        const dynamicMaxTurnSpeed = maxTurnSpeed * (1 - Math.max(0, speedNormalized) * 0.6);
+        
         const targetAngle = Math.atan2(dy, dx);
         let angleDiff = targetAngle - carAngle.current;
         while (angleDiff > Math.PI) angleDiff -= Math.PI * 2;
         while (angleDiff < -Math.PI) angleDiff += Math.PI * 2;
 
         const steeringForce = angleDiff * turnDamping;
-        const clampedSteering = Math.max(-maxTurnSpeed, Math.min(maxTurnSpeed, steeringForce));
+        const clampedSteering = Math.max(-dynamicMaxTurnSpeed, Math.min(dynamicMaxTurnSpeed, steeringForce));
         carAngle.current += clampedSteering;
 
         // 4. Forward Movement
