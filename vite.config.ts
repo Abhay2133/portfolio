@@ -5,19 +5,8 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
-
-  const configuredBase = env.VITE_BASE_PATH?.trim();
-  const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'portfolio';
-  const defaultBase = process.env.GITHUB_ACTIONS === 'true' ? `/${repositoryName}/` : '/';
-  const base = configuredBase || defaultBase;
-
-  const normalizedBase =
-    base === '/'
-      ? '/'
-      : `/${base.replace(/^\/+|\/+$/g, '')}/`;
-
   return {
-    base: normalizedBase,
+    base: '/portfolio/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

@@ -18,7 +18,9 @@
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
     "lucide-react": "^0.546.0",
+    "matter-js": "^0.20.0",
     "motion": "^12.38.0",
+    "pixi.js": "^8.18.1",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
     "tailwind-merge": "^3.5.0",
@@ -26,6 +28,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/matter-js": "^0.20.2",
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.14",
