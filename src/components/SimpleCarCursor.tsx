@@ -10,11 +10,21 @@ interface Point {
   id: number;
 }
 
+interface TireMark {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+  angle: number;
+  id: number;
+}
+
 export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   const carRef = useRef<HTMLDivElement>(null);
   const headlightRef = useRef<SVGGElement>(null);
   const pathQueue = useRef<Point[]>([]);
   const pointIdCounter = useRef(0);
+  const markIdCounter = useRef(0);
   const carPos = useRef({ x: 0, y: 0 });
   const carAngle = useRef(0);
   const currentSpeed = useRef(0);
@@ -25,13 +35,18 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   const timeChasingTarget = useRef(0);
   const estimatedTimeForTarget = useRef(0);
   
-  // State to track points for visualization
+  // State to track points and tire marks for visualization
   const [displayPoints, setDisplayPoints] = useState<Point[]>([]);
+  const [tireMarks, setTireMarks] = useState<TireMark[]>([]);
+  const tireMarksRef = useRef<TireMark[]>([]);
+  const lastMarkPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!isVisible) {
       setDisplayPoints([]);
+      setTireMarks([]);
       pathQueue.current = [];
+      tireMarksRef.current = [];
       currentTargetId.current = null;
       currentSpeed.current = 0;
       setIsBraking(false);
@@ -149,9 +164,42 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
         carPos.current.y += Math.sin(carAngle.current) * currentSpeed.current;
       }
 
+      // --- Tire Mark Generation ---
+      const distFromLastMark = Math.sqrt(
+        Math.pow(carPos.current.x - lastMarkPos.current.x, 2) + 
+        Math.pow(carPos.current.y - lastMarkPos.current.y, 2)
+      );
 
-      // Sync display points state once per frame for visualization
+      if (currentSpeed.current > 0.5 && distFromLastMark > 15) {
+        // Calculate offsets for two rear tire tracks
+        // Car is 50px long, marks should be at the rear (approx -15px from center)
+        // Car is 25px wide, tires are separated by approx 16px (+/- 8px from center)
+        const rearX = carPos.current.x - Math.cos(carAngle.current) * 15;
+        const rearY = carPos.current.y - Math.sin(carAngle.current) * 15;
+
+        // Perpendicular vector for width offset
+        const perpX = Math.cos(carAngle.current + Math.PI / 2);
+        const perpY = Math.sin(carAngle.current + Math.PI / 2);
+
+        const newMark: TireMark = {
+          x1: rearX + perpX * 8,
+          y1: rearY + perpY * 8,
+          x2: rearX - perpX * 8,
+          y2: rearY - perpY * 8,
+          angle: carAngle.current,
+          id: markIdCounter.current++
+        };
+
+        tireMarksRef.current.push(newMark);
+        if (tireMarksRef.current.length > 60) {
+          tireMarksRef.current.shift();
+        }
+        lastMarkPos.current = { x: carPos.current.x, y: carPos.current.y };
+      }
+
+      // Sync display points and tire marks state once per frame for visualization
       setDisplayPoints([...pathQueue.current]);
+      setTireMarks([...tireMarksRef.current]);
 
       // 6. Render
       const angleInDegrees = carAngle.current * (180 / Math.PI);
@@ -178,8 +226,41 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
 
   return (
     <>
-      {/* Path Visualization Layer - Dots on the screen */}
+      {/* Background Visualization Layer */}
       <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Tire Marks */}
+        <svg className="w-full h-full opacity-20 dark:opacity-40">
+          {tireMarks.map((mark, index) => {
+            // Fading out older marks
+            const opacity = (index / tireMarks.length) * 0.8;
+            return (
+              <g key={mark.id} style={{ opacity }}>
+                {/* Left Tire Mark */}
+                <rect 
+                  x={mark.x1} 
+                  y={mark.y1} 
+                  width="4" 
+                  height="1.5" 
+                  fill="currentColor"
+                  className="text-neutral-900 dark:text-neutral-100"
+                  transform={`translate(-2, -0.75) rotate(${mark.angle * (180/Math.PI)}, ${mark.x1}, ${mark.y1})`}
+                />
+                {/* Right Tire Mark */}
+                <rect 
+                  x={mark.x2} 
+                  y={mark.y2} 
+                  width="4" 
+                  height="1.5" 
+                  fill="currentColor"
+                  className="text-neutral-900 dark:text-neutral-100"
+                  transform={`translate(-2, -0.75) rotate(${mark.angle * (180/Math.PI)}, ${mark.x2}, ${mark.y2})`}
+                />
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Path Checkpoints */}
         {displayPoints.map((point) => (
           <div
             key={point.id}
