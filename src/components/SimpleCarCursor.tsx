@@ -17,6 +17,13 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   const pointIdCounter = useRef(0);
   const carPos = useRef({ x: 0, y: 0 });
   const carAngle = useRef(0);
+  const currentSpeed = useRef(0);
+  const [isBraking, setIsBraking] = useState(false);
+  
+  // Physics tracking
+  const currentTargetId = useRef<number | null>(null);
+  const timeChasingTarget = useRef(0);
+  const estimatedTimeForTarget = useRef(0);
   
   // State to track points for visualization
   const [displayPoints, setDisplayPoints] = useState<Point[]>([]);
@@ -25,6 +32,9 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
     if (!isVisible) {
       setDisplayPoints([]);
       pathQueue.current = [];
+      currentTargetId.current = null;
+      currentSpeed.current = 0;
+      setIsBraking(false);
       return;
     }
 
@@ -55,20 +65,55 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
       if (!carRef.current) return;
 
       // --- Driving Physics Constants ---
-      const minSpeed = 1.6; 
-      const maxSpeed = 6.5; 
-      const maxTurnSpeed = 0.18; 
-      const reachThreshold = 35; // Slightly larger to prevent orbital locks
-      const turnDamping = 0.15; // Smoother steering response
+      const minSpeed = 1.5; 
+      const maxSpeed = 7.5; 
+      const acceleration = 0.05; // Speed added per frame
+      const maxTurnSpeed = 0.20; 
+      const reachThreshold = 30; 
+      const turnDamping = 0.15; 
       
       if (pathQueue.current.length > 0) {
         const target = pathQueue.current[0];
         
+        // 1. Target Progress Tracking
+        if (target.id !== currentTargetId.current) {
+          const dx = target.x - carPos.current.x;
+          const dy = target.y - carPos.current.y;
+          const initialDist = Math.sqrt(dx * dx + dy * dy);
+          
+          currentTargetId.current = target.id;
+          timeChasingTarget.current = 0;
+          estimatedTimeForTarget.current = (initialDist / maxSpeed) * 1.5 + 40; 
+        }
+
+        timeChasingTarget.current++;
+
         const dx = target.x - carPos.current.x;
         const dy = target.y - carPos.current.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // 1. Steering Logic with Damping
+        // 2. Variable Target Speed
+        let targetSpeed = maxSpeed;
+        if (timeChasingTarget.current > estimatedTimeForTarget.current) {
+          // Slow down towards minSpeed if we missed the target to sharpen the turning radius
+          const overtime = timeChasingTarget.current - estimatedTimeForTarget.current;
+          const slowdownFactor = Math.max(0, 1 - overtime / 60);
+          targetSpeed = minSpeed + (maxSpeed - minSpeed) * slowdownFactor;
+        }
+
+        // Apply acceleration/deceleration to currentSpeed
+        if (currentSpeed.current < targetSpeed) {
+          currentSpeed.current = Math.min(targetSpeed, currentSpeed.current + acceleration);
+          setIsBraking(false);
+        } else if (currentSpeed.current > targetSpeed) {
+          // Decelerate faster than we accelerate (braking)
+          currentSpeed.current = Math.max(targetSpeed, currentSpeed.current - acceleration * 3);
+          setIsBraking(true);
+        } else {
+          setIsBraking(false);
+        }
+
+        // 3. Steering Logic with Damping
         const targetAngle = Math.atan2(dy, dx);
         let angleDiff = targetAngle - carAngle.current;
         while (angleDiff > Math.PI) angleDiff -= Math.PI * 2;
@@ -78,25 +123,32 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
         const clampedSteering = Math.max(-maxTurnSpeed, Math.min(maxTurnSpeed, steeringForce));
         carAngle.current += clampedSteering;
 
-        // 2. Variable Speed
-        // Slow down as we reach the point to allow for tighter turning circle
-        const distanceFactor = Math.min(distance / 250, 1);
-        const currentSpeed = minSpeed + (maxSpeed - minSpeed) * distanceFactor;
+        // 4. Forward Movement
+        carPos.current.x += Math.cos(carAngle.current) * currentSpeed.current;
+        carPos.current.y += Math.sin(carAngle.current) * currentSpeed.current;
 
-        // 3. Forward Movement
-        carPos.current.x += Math.cos(carAngle.current) * currentSpeed;
-        carPos.current.y += Math.sin(carAngle.current) * currentSpeed;
-
-        // 4. Dequeue Logic
+        // 5. Dequeue Logic
         if (distance < reachThreshold) {
           pathQueue.current.shift();
         }
+      } else {
+        // Naturally drift to a stop when no path exists
+        if (currentSpeed.current > 0) {
+          const brakeForce = acceleration * 4; // Harder brake when stopping at end of path
+          currentSpeed.current = Math.max(0, currentSpeed.current - brakeForce);
+          setIsBraking(true);
+        } else {
+          setIsBraking(false);
+        }
+        carPos.current.x += Math.cos(carAngle.current) * currentSpeed.current;
+        carPos.current.y += Math.sin(carAngle.current) * currentSpeed.current;
       }
+
 
       // Sync display points state once per frame for visualization
       setDisplayPoints([...pathQueue.current]);
 
-      // 4. Render
+      // 6. Render
       const angleInDegrees = carAngle.current * (180 / Math.PI);
       carRef.current.style.transform = `translate3d(${carPos.current.x}px, ${carPos.current.y}px, 0) rotate(${angleInDegrees}deg)`;
 
@@ -194,14 +246,27 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
           <rect x="46" y="5" width="2" height="4" rx="0.5" fill="#FFD700" className="opacity-90 dark:opacity-100" />
           <rect x="46" y="16" width="2" height="4" rx="0.5" fill="#FFD700" className="opacity-90 dark:opacity-100" />
           {/* Iconic Tri-Bar Taillights */}
-          <g opacity="0.9">
-            <rect x="3" y="6" width="1" height="3" fill="#EE0000" />
-            <rect x="3" y="10" width="1" height="3" fill="#EE0000" />
-            <rect x="3" y="14" width="1" height="3" fill="#EE0000" />
+          <g className={`transition-all duration-200 ${isBraking ? "opacity-100 scale-x-110" : "opacity-90"}`}>
+            {/* Glow effect for braking */}
+            {isBraking && (
+              <g className="animate-pulse">
+                <rect x="1" y="6" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" />
+                <rect x="1" y="10" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" />
+                <rect x="1" y="14" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" />
+                
+                <rect x="1" y="18" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" />
+                <rect x="1" y="22" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" transform="translate(0,-11)" />
+                <rect x="1" y="22" width="4" height="3" fill="#FF0000" opacity="0.4" filter="blur(2px)" transform="translate(0,-15)" />
+              </g>
+            )}
             
-            <rect x="3" y="18" width="1" height="3" fill="#EE0000" />
-            <rect x="3" y="22" width="1" height="3" transform="translate(0,-11)" fill="#EE0000" />
-            <rect x="3" y="22" width="1" height="3" transform="translate(0,-15)" fill="#EE0000" />
+            <rect x="3" y="6" width="1" height="3" fill={isBraking ? "#FF3333" : "#EE0000"} />
+            <rect x="3" y="10" width="1" height="3" fill={isBraking ? "#FF3333" : "#EE0000"} />
+            <rect x="3" y="14" width="1" height="3" fill={isBraking ? "#FF3333" : "#EE0000"} />
+            
+            <rect x="3" y="18" width="1" height="3" fill={isBraking ? "#FF3333" : "#EE0000"} />
+            <rect x="3" y="22" width="1" height="3" transform="translate(0,-11)" fill={isBraking ? "#FF3333" : "#EE0000"} />
+            <rect x="3" y="22" width="1" height="3" transform="translate(0,-15)" fill={isBraking ? "#FF3333" : "#EE0000"} />
           </g>
         </svg>
       </div>
