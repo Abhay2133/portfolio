@@ -1,8 +1,13 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, Moon, Sun, Car } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function Navigation() {
+interface NavigationProps {
+  onToggleCar: () => void;
+  isCarVisible: boolean;
+}
+
+export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
   const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {
@@ -37,6 +42,18 @@ export function Navigation() {
         Abhay Bisht
       </div>
       <div className="flex gap-4 items-center px-2">
+        <button 
+          onClick={onToggleCar}
+          className={`transition-all mr-1 p-1 rounded-md ${
+            isCarVisible 
+              ? "text-blue-500 bg-blue-500/10" 
+              : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          }`}
+          aria-label="Toggle Car Follower"
+          title="Toggle Car Follower"
+        >
+          <Car className="w-4 h-4 sm:w-5 sm:h-5" />
+        </button>
         <button 
           onClick={toggleTheme} 
           className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all mr-2"

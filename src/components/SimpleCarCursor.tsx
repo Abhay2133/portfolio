@@ -1,29 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-export function SimpleCarCursor() {
-  const [isVisible, setIsVisible] = useState(false);
+interface SimpleCarCursorProps {
+  isVisible: boolean;
+}
+
+export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   const carRef = useRef<HTMLDivElement>(null);
+  const headlightRef = useRef<SVGGElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const carPos = useRef({ x: 0, y: 0 });
   const carAngle = useRef(0);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'm') {
-        e.preventDefault();
-        setIsVisible(prev => !prev);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  useEffect(() => {
     if (!isVisible) return;
 
     // Initial position outside the screen or at current mouse if revealing
-    if (carPos.current.x === -100) {
+    if (carPos.current.x === 0 && carPos.current.y === 0) {
       carPos.current = { x: -100, y: window.innerHeight / 2 };
     }
     
@@ -79,6 +71,15 @@ export function SimpleCarCursor() {
       const angleInDegrees = carAngle.current * (180 / Math.PI);
       carRef.current.style.transform = `translate3d(${carPos.current.x}px, ${carPos.current.y}px, 0) rotate(${angleInDegrees}deg)`;
 
+      // 4. Headlight Control
+      if (headlightRef.current) {
+        // Turn on if moving significantly, turn off when close to cursor
+        const headlightOpacity = distance > stopDistance ? (isVisible ? 1 : 0) : 0;
+        headlightRef.current.style.opacity = headlightOpacity.toString();
+        // Dynamic scaling of headlight intensity based on speed could be cool, 
+        // but simple toggle is requested.
+      }
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -110,8 +111,29 @@ export function SimpleCarCursor() {
         viewBox="0 0 50 25"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full opacity-60 dark:opacity-80 drop-shadow-md"
+        className="w-full h-full opacity-70 dark:opacity-90 drop-shadow-md overflow-visible"
       >
+        <defs>
+          <linearGradient id="headlightGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" className="stop-color-headlight-start" />
+            <stop offset="100%" className="stop-color-headlight-end" />
+          </linearGradient>
+          <style>
+            {`
+              .stop-color-headlight-start { stop-color: rgba(255, 255, 180, 0.4); }
+              .stop-color-headlight-end { stop-color: rgba(255, 255, 180, 0); }
+              .dark .stop-color-headlight-start { stop-color: rgba(255, 255, 220, 0.6); }
+              .dark .stop-color-headlight-end { stop-color: rgba(255, 255, 220, 0); }
+            `}
+          </style>
+        </defs>
+
+        {/* Headlight Beams */}
+        <g ref={headlightRef} style={{ transition: 'opacity 0.3s ease', opacity: 0 }}>
+          <path d="M48,7 L100,-10 L100,10 L48,9 Z" fill="url(#headlightGradient)" />
+          <path d="M48,18 L100,15 L100,35 L48,16 Z" fill="url(#headlightGradient)" />
+        </g>
+
         {/* Ford Mustang Silhouette - Top Down */}
         {/* Main Body */}
         <path 
