@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 
 const skills = {
-  "Frontend": ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-  "Backend": ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"],
-  "Tools": ["Git", "Docker", "AWS", "Linux"]
+  "Frontend": ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS"],
+  "Backend": ["Node.js", "Ruby on Rails", "Express.js", "REST APIs", "Webhooks"],
+  "Databases & Tools": ["PostgreSQL", "MySQL", "Git", "API Design", "System Design"]
 };
 
 export function Skills() {
@@ -27,6 +27,13 @@ export function Skills() {
               ))}
             </ul>
           </div>
+        ))}
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 px-1">
+        <span className="text-[10px] items-center font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">Certifications:</span>
+        {["Machine Learning – Acmegrade", "JS Algorithms – Freecodecamp", "Responsive Web Design"].map((cert) => (
+          <span key={cert} className="text-xs font-medium text-neutral-500 dark:text-neutral-400">{cert}</span>
         ))}
       </div>
     </motion.section>

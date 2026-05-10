@@ -3,25 +3,25 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution with real-time inventory management, secure payments, and a scalable architecture.",
+    title: "NeuroPlan",
+    description: "An AI-powered Flutter app that converts natural language goals into structured project roadmaps with pluggable AI providers.",
+    tech: ["Flutter", "Dart", "Firebase", "GROQ AI"],
+    image: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&q=80&auto=format&fit=crop",
+    link: "https://github.com/abhay2133"
+  },
+  {
+    title: "Engineers Day System",
+    description: "Event registration system for managing participant data and secure online payments with transaction verification.",
     tech: ["Next.js", "PostgreSQL", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?w=800&q=80&auto=format&fit=crop",
     link: "#"
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management tool focusing on minimal design and offline-first capabilities.",
-    tech: ["React", "Firebase", "Redux"],
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80&auto=format&fit=crop",
-    link: "#"
-  },
-  {
-    title: "Real-time Chat Service",
-    description: "WebSocket-based chat service supporting multiple channels and message history caching.",
-    tech: ["Node.js", "Socket.io", "Redis"],
-    image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800&q=80&auto=format&fit=crop",
-    link: "#"
+    title: "Quiz Bowl Application",
+    description: "Full-stack quiz platform featuring individual submission handling and JSON-based storage for competitive quiz bowls.",
+    tech: ["Flutter", "Express.js", "Node.js", "TypeScript"],
+    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&q=80&auto=format&fit=crop",
+    link: "https://github.com/abhay2133"
   }
 ];
 

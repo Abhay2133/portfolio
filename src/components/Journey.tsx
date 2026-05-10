@@ -2,14 +2,19 @@ import { motion } from "motion/react";
 
 const journey = [
   {
-    role: "Software Engineer",
-    organization: "Full Time",
-    period: "June 2025 - Present"
+    role: "Full Stack Engineer",
+    organization: "Formester",
+    period: "July 2025 - Present"
   },
   {
-    role: "Internship",
-    organization: "Acornglobus",
+    role: "Full Stack Intern",
+    organization: "Acorn Globus",
     period: "Feb 2025 - June 2025"
+  },
+  {
+    role: "SDE Intern",
+    organization: "Excelling Technologies",
+    period: "June 2024 - Dec 2024"
   },
   {
     role: "Internship",

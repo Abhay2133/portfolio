@@ -3,6 +3,7 @@ import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { Skills } from "./components/Skills";
 import { Journey } from "./components/Journey";
+import { Achievements } from "./components/Achievements";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -20,6 +21,7 @@ export default function App() {
         <Navigation onToggleCar={() => setShowCar(!showCar)} isCarVisible={showCar} />
         <Hero />
         <Skills />
+        <Achievements />
         <Journey />
         <Projects />
         <Contact />
