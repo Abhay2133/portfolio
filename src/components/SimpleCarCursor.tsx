@@ -10,12 +10,12 @@ interface Point {
   id: number;
 }
 
-interface TireMark {
-  x1: number;
-  y1: number;
-  x2: number;
-  y2: number;
-  angle: number;
+interface TireMarkPoint {
+  lx: number;
+  ly: number;
+  rx: number;
+  ry: number;
+  opacity: number;
   id: number;
 }
 
@@ -28,6 +28,7 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   const carPos = useRef({ x: 0, y: 0 });
   const carAngle = useRef(0);
   const currentSpeed = useRef(0);
+  const driftAngle = useRef(0); // Difference between facing direction and movement direction
   const [isBraking, setIsBraking] = useState(false);
   
   // Physics tracking
@@ -37,8 +38,8 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
   
   // State to track points and tire marks for visualization
   const [displayPoints, setDisplayPoints] = useState<Point[]>([]);
-  const [tireMarks, setTireMarks] = useState<TireMark[]>([]);
-  const tireMarksRef = useRef<TireMark[]>([]);
+  const [tireMarks, setTireMarks] = useState<TireMarkPoint[]>([]);
+  const tireMarksRef = useRef<TireMarkPoint[]>([]);
   const lastMarkPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -49,6 +50,7 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
       tireMarksRef.current = [];
       currentTargetId.current = null;
       currentSpeed.current = 0;
+      driftAngle.current = 0;
       setIsBraking(false);
       return;
     }
@@ -75,18 +77,19 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
     window.addEventListener('mousemove', handleMouseMove);
 
     let animationFrameId: number;
-    
     const animate = () => {
       if (!carRef.current) return;
 
       // --- Driving Physics Constants ---
       const minSpeed = 1.5; 
       const maxSpeed = 7.5; 
-      const acceleration = 0.05; // Speed added per frame
+      const acceleration = 0.05; 
       const maxTurnSpeed = 0.20; 
       const reachThreshold = 30; 
       const turnDamping = 0.15; 
       
+      let actualSteering = 0;
+
       if (pathQueue.current.length > 0) {
         const target = pathQueue.current[0];
         
@@ -110,18 +113,16 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
         // 2. Variable Target Speed
         let targetSpeed = maxSpeed;
         if (timeChasingTarget.current > estimatedTimeForTarget.current) {
-          // Slow down towards minSpeed if we missed the target to sharpen the turning radius
           const overtime = timeChasingTarget.current - estimatedTimeForTarget.current;
           const slowdownFactor = Math.max(0, 1 - overtime / 60);
           targetSpeed = minSpeed + (maxSpeed - minSpeed) * slowdownFactor;
         }
 
-        // Apply acceleration/deceleration to currentSpeed
+        // Apply acceleration/deceleration
         if (currentSpeed.current < targetSpeed) {
           currentSpeed.current = Math.min(targetSpeed, currentSpeed.current + acceleration);
           setIsBraking(false);
         } else if (currentSpeed.current > targetSpeed) {
-          // Decelerate faster than we accelerate (braking)
           currentSpeed.current = Math.max(targetSpeed, currentSpeed.current - acceleration * 3);
           setIsBraking(true);
         } else {
@@ -129,9 +130,7 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
         }
 
         // 3. Steering Logic with Speed-Dependent flexibility
-        // The faster we go, the less we can turn (simulating understeering and stability)
         const speedNormalized = (currentSpeed.current - minSpeed) / (maxSpeed - minSpeed);
-        // Turn speed ranges from maxTurnSpeed (at low speed) to a significantly lower value (at high speed)
         const dynamicMaxTurnSpeed = maxTurnSpeed * (1 - Math.max(0, speedNormalized) * 0.6);
         
         const targetAngle = Math.atan2(dy, dx);
@@ -140,69 +139,91 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
         while (angleDiff < -Math.PI) angleDiff += Math.PI * 2;
 
         const steeringForce = angleDiff * turnDamping;
-        const clampedSteering = Math.max(-dynamicMaxTurnSpeed, Math.min(dynamicMaxTurnSpeed, steeringForce));
-        carAngle.current += clampedSteering;
+        actualSteering = Math.max(-dynamicMaxTurnSpeed, Math.min(dynamicMaxTurnSpeed, steeringForce));
+        carAngle.current += actualSteering;
 
-        // 4. Forward Movement
-        carPos.current.x += Math.cos(carAngle.current) * currentSpeed.current;
-        carPos.current.y += Math.sin(carAngle.current) * currentSpeed.current;
+        // --- Drifting Logic ---
+        // Drift is triggered by sharp steering at high speed
+        const driftThreshold = 0.08;
+        const speedThreshold = 4.0;
+        
+        if (Math.abs(actualSteering) > driftThreshold && currentSpeed.current > speedThreshold) {
+          // Increase drift angle based on steering intensity (slip outwards)
+          const targetDrift = actualSteering * 2.5; 
+          driftAngle.current += (targetDrift - driftAngle.current) * 0.1;
+        } else {
+          // Gradually recover from drift
+          driftAngle.current *= 0.92;
+        }
+
+        // 4. Forward Movement (with side slip)
+        const movementAngle = carAngle.current + driftAngle.current;
+        carPos.current.x += Math.cos(movementAngle) * currentSpeed.current;
+        carPos.current.y += Math.sin(movementAngle) * currentSpeed.current;
 
         // 5. Dequeue Logic
         if (distance < reachThreshold) {
           pathQueue.current.shift();
         }
       } else {
-        // Naturally drift to a stop when no path exists
+        // Naturally drift to a stop
         if (currentSpeed.current > 0) {
-          const brakeForce = acceleration * 4; // Harder brake when stopping at end of path
+          const brakeForce = acceleration * 4; 
           currentSpeed.current = Math.max(0, currentSpeed.current - brakeForce);
           setIsBraking(true);
         } else {
           setIsBraking(false);
         }
-        carPos.current.x += Math.cos(carAngle.current) * currentSpeed.current;
-        carPos.current.y += Math.sin(carAngle.current) * currentSpeed.current;
+        driftAngle.current *= 0.8;
+        const movementAngle = carAngle.current + driftAngle.current;
+        carPos.current.x += Math.cos(movementAngle) * currentSpeed.current;
+        carPos.current.y += Math.sin(movementAngle) * currentSpeed.current;
       }
 
-      // --- Tire Mark Generation ---
+      // --- Tire Mark Generation & Decay ---
+      // Decay existing marks every frame
+      tireMarksRef.current = tireMarksRef.current
+        .map(m => ({ ...m, opacity: m.opacity - 0.005 }))
+        .filter(m => m.opacity > 0);
+
       const distFromLastMark = Math.sqrt(
         Math.pow(carPos.current.x - lastMarkPos.current.x, 2) + 
         Math.pow(carPos.current.y - lastMarkPos.current.y, 2)
       );
 
-      if (currentSpeed.current > 0.5 && distFromLastMark > 15) {
-        // Calculate offsets for two rear tire tracks
-        // Car is 50px long, marks should be at the rear (approx -15px from center)
-        // Car is 25px wide, tires are separated by approx 16px (+/- 8px from center)
+      // Add new mark point if moved enough
+      const markThreshold = Math.abs(driftAngle.current) > 0.05 ? 5 : 12;
+
+      if (currentSpeed.current > 0.5 && distFromLastMark > markThreshold) {
         const rearX = carPos.current.x - Math.cos(carAngle.current) * 15;
         const rearY = carPos.current.y - Math.sin(carAngle.current) * 15;
 
-        // Perpendicular vector for width offset
         const perpX = Math.cos(carAngle.current + Math.PI / 2);
         const perpY = Math.sin(carAngle.current + Math.PI / 2);
 
-        const newMark: TireMark = {
-          x1: rearX + perpX * 8,
-          y1: rearY + perpY * 8,
-          x2: rearX - perpX * 8,
-          y2: rearY - perpY * 8,
-          angle: carAngle.current,
+        const newMark: TireMarkPoint = {
+          lx: rearX + perpX * 8,
+          ly: rearY + perpY * 8,
+          rx: rearX - perpX * 8,
+          ry: rearY - perpY * 8,
+          opacity: 1.0,
           id: markIdCounter.current++
         };
 
         tireMarksRef.current.push(newMark);
-        if (tireMarksRef.current.length > 60) {
+        if (tireMarksRef.current.length > 200) {
           tireMarksRef.current.shift();
         }
         lastMarkPos.current = { x: carPos.current.x, y: carPos.current.y };
       }
 
-      // Sync display points and tire marks state once per frame for visualization
+      // Sync display points and tire marks state
       setDisplayPoints([...pathQueue.current]);
       setTireMarks([...tireMarksRef.current]);
 
       // 6. Render
       const angleInDegrees = carAngle.current * (180 / Math.PI);
+      // We render the body at carAngle, but movement was influenced by driftAngle
       carRef.current.style.transform = `translate3d(${carPos.current.x}px, ${carPos.current.y}px, 0) rotate(${angleInDegrees}deg)`;
 
       // 5. Headlight Control
@@ -228,32 +249,29 @@ export function SimpleCarCursor({ isVisible }: SimpleCarCursorProps) {
     <>
       {/* Background Visualization Layer */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Tire Marks */}
-        <svg className="w-full h-full opacity-20 dark:opacity-40">
-          {tireMarks.map((mark, index) => {
-            // Fading out older marks
-            const opacity = (index / tireMarks.length) * 0.8;
+        {/* Tire Marks as continuous segments */}
+        <svg className="w-full h-full">
+          {tireMarks.map((mark, i) => {
+            if (i === 0) return null;
+            const prev = tireMarks[i - 1];
+            
+            // Don't connect if points are too far apart (jump or new segment)
+            const dist = Math.sqrt(Math.pow(mark.lx - prev.lx, 2) + Math.pow(mark.ly - prev.ly, 2));
+            if (dist > 30) return null;
+
+            const finalOpacity = ((mark.opacity + prev.opacity) / 2) * 0.3;
+            
             return (
-              <g key={mark.id} style={{ opacity }}>
-                {/* Left Tire Mark */}
-                <rect 
-                  x={mark.x1} 
-                  y={mark.y1} 
-                  width="4" 
-                  height="1.5" 
-                  fill="currentColor"
+              <g key={mark.id} style={{ opacity: finalOpacity }}>
+                <line 
+                  x1={prev.lx} y1={prev.ly} x2={mark.lx} y2={mark.ly} 
+                  stroke="currentColor" strokeWidth="2.5"
                   className="text-neutral-900 dark:text-neutral-100"
-                  transform={`translate(-2, -0.75) rotate(${mark.angle * (180/Math.PI)}, ${mark.x1}, ${mark.y1})`}
                 />
-                {/* Right Tire Mark */}
-                <rect 
-                  x={mark.x2} 
-                  y={mark.y2} 
-                  width="4" 
-                  height="1.5" 
-                  fill="currentColor"
+                <line 
+                  x1={prev.rx} y1={prev.ry} x2={mark.rx} y2={mark.ry} 
+                  stroke="currentColor" strokeWidth="2.5"
                   className="text-neutral-900 dark:text-neutral-100"
-                  transform={`translate(-2, -0.75) rotate(${mark.angle * (180/Math.PI)}, ${mark.x2}, ${mark.y2})`}
                 />
               </g>
             );
