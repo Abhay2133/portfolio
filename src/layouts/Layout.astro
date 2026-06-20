@@ -1,0 +1,62 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Abhay Bisht | Full Stack & AI Portfolio", 
+  description = "Abhay Bisht is a Software Engineer specializing in Full Stack & AI Systems. He builds production SaaS platforms, robust APIs, and scalable AI solutions." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Abhay Bisht, Full Stack Developer, Software Engineer, React Portfolio, AI Developer Portfolio" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://www.abhaybisht.com/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.abhaybisht.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://www.abhaybisht.com/og-image.png" />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.abhaybisht.com/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://www.abhaybisht.com/og-image.png" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fast Dark Mode Initialization to avoid theme flashing -->
+    <script is:inline>
+      const getThemePreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+      
+      const isDark = getThemePreference() === 'dark';
+      document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

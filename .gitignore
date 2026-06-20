@@ -41,3 +41,6 @@ dist-ssr/
 
 # Optional files
 .env.example
+
+# Astro cache
+.astro/
