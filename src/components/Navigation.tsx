@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Github, Linkedin, Moon, Sun, Car } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Tooltip } from "./ui/Tooltip";
@@ -33,20 +32,15 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
   };
 
   return (
-    <motion.nav 
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex justify-between items-center w-full sticky top-6 z-50 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-white/60 dark:border-neutral-800/60 p-3 sm:px-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)]"
-    >
-      <div className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 px-2 cursor-pointer">
+    <nav className="navbar-container flex justify-between items-center w-full sticky top-6 z-50 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-white/60 dark:border-neutral-800/60 p-3 sm:px-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] overflow-hidden">
+      <div className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 px-2 cursor-pointer magnetic-target">
         Abhay Bisht
       </div>
       <div className="flex gap-4 items-center px-2">
         <Tooltip content={isCarVisible ? "Disable Car" : "Enable Car"}>
           <button 
             onClick={onToggleCar}
-            className={`transition-all p-1 rounded-md ${
+            className={`transition-all p-1 rounded-md cursor-pointer magnetic-target ${
               isCarVisible 
                 ? "text-blue-500 bg-blue-500/10" 
                 : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -60,7 +54,7 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
         <Tooltip content={isDark ? "Light Mode" : "Dark Mode"}>
           <button 
             onClick={toggleTheme} 
-            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all p-1"
+            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all p-1 cursor-pointer magnetic-target"
             aria-label="Toggle Dark Mode"
           >
             {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
@@ -72,7 +66,7 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
             href="https://github.com/abhay2133" 
             target="_blank" 
             rel="noreferrer" 
-            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:scale-110 transition-all p-1"
+            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:scale-110 transition-all p-1 magnetic-target"
             aria-label="GitHub"
           >
             <Github className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -84,13 +78,17 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
             href="https://www.linkedin.com/in/abhay-21m" 
             target="_blank" 
             rel="noreferrer" 
-            className="text-neutral-500 hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400 hover:scale-110 transition-all p-1"
+            className="text-neutral-500 hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400 hover:scale-110 transition-all p-1 magnetic-target"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
         </Tooltip>
       </div>
-    </motion.nav>
+      {/* Scroll Progress Bar */}
+      <div className="absolute bottom-0 left-6 right-6 h-[2px] bg-neutral-200/20 dark:bg-neutral-800/20 rounded-full overflow-hidden">
+        <div className="scroll-progress-bar h-full w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 origin-left scale-x-0"></div>
+      </div>
+    </nav>
   );
 }

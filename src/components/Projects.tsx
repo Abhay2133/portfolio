@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -27,23 +26,33 @@ const projects = [
 
 export function Projects() {
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      id="projects"
-    >
-      <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 tracking-tight px-1">Selected Work</h2>
+    <section id="projects" className="scroll-animate">
+      <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 tracking-tight px-1">
+        Selected Work
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {projects.map((project) => (
-          <div key={project.title} className="group relative flex flex-col p-3 rounded-2xl border border-neutral-100 dark:border-neutral-800 shadow-sm hover:border-neutral-200 dark:hover:border-neutral-700 hover:shadow-md hover:-translate-y-0.5 transition-all gap-4 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm">
-            <a href={project.link} className="w-full h-40 shrink-0 rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 block relative">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
+          <div 
+            key={project.title} 
+            className="project-card group relative flex flex-col p-3 rounded-2xl border border-neutral-100 dark:border-neutral-800 shadow-sm hover:border-neutral-200 dark:hover:border-neutral-700 hover:shadow-md hover:-translate-y-0.5 transition-all gap-4 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm"
+          >
+            <a 
+              href={project.link} 
+              className="project-img-wrap w-full h-40 shrink-0 rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 block relative magnetic-target"
+              style={{ clipPath: "inset(0 100% 0 0)" }}
+            >
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="project-img w-full h-full object-cover object-center scale-125 group-hover:scale-110 transition-transform duration-700 ease-out" 
+              />
             </a>
-            <div className="flex flex-col grow px-1">
+            <div className="project-content flex flex-col grow px-1 opacity-0">
               <div>
-                <a href={project.link} className="inline-flex items-center gap-1 font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-base tracking-tight">
+                <a 
+                  href={project.link} 
+                  className="inline-flex items-center gap-1 font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-base tracking-tight magnetic-target"
+                >
                   {project.title}
                   <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                 </a>
@@ -54,7 +63,7 @@ export function Projects() {
               <div className="text-xs font-mono text-neutral-500 dark:text-neutral-500 mt-auto pt-4 flex flex-wrap gap-x-3 gap-y-1">
                 {project.tech.map((t, i) => (
                   <span key={t} className="flex items-center">
-                    {t}{i < project.tech.length - 1 && <span className="ml-3 w-1 h-1 bg-neutral-300 dark:bg-neutral-700 rounded-full" />}
+                    {t}{i < project.tech.length - 1 && <span className="ml-3 w-1.5 h-1.5 bg-neutral-300 dark:bg-neutral-700 rounded-full" />}
                   </span>
                 ))}
               </div>
@@ -62,6 +71,6 @@ export function Projects() {
           </div>
         ))}
       </div>
-    </motion.section>
+    </section>
   );
 }

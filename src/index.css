@@ -49,3 +49,32 @@ body {
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #52525b;
 }
+
+/* Custom keyframes for background geometry */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom text-gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Base styling for splitting characters to avoid layout shifts */
+.char-span {
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+.perspective-container {
+  perspective: 1200px;
+}
+
