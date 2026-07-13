@@ -18,7 +18,7 @@ export function Hero() {
           View Projects
         </a>
         <a 
-          href="/Resume_Abhay-Bisht.pdf" 
+          href="/Resume_Abhay_Updated.pdf" 
           target="_blank" 
           className="text-sm font-medium bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-6 py-2.5 rounded-full shadow-sm hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md hover:-translate-y-0.5 transition-all text-neutral-800 dark:text-neutral-200 magnetic-target"
         >

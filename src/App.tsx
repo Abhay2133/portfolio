@@ -5,7 +5,6 @@ import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { Skills } from "./components/Skills";
 import { Journey } from "./components/Journey";
-import { Achievements } from "./components/Achievements";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -364,24 +363,6 @@ export default function App() {
           }
         }
 
-        // 5. Stagger Achievements
-        const achieveCards = document.querySelectorAll('.achievement-card');
-        if (achieveCards.length > 0) {
-          gsap.set(achieveCards, { opacity: 0, y: 30 });
-          gsap.to(achieveCards, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: ".achievement-card",
-              start: "top 85%",
-              once: true
-            }
-          });
-        }
-
         // 6. Career Journey grow vertical line + node reveals
         const journeyLine = document.querySelector('.journey-line');
         if (journeyLine) {
@@ -635,7 +616,6 @@ export default function App() {
         <Navigation onToggleCar={() => setShowCar(!showCar)} isCarVisible={showCar} />
         <Hero />
         <Skills />
-        <Achievements />
         <Journey />
         <Projects />
         <Contact />
