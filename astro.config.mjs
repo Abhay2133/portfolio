@@ -3,12 +3,19 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import vercel from '@astrojs/vercel/static';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
