@@ -1,0 +1,159 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "abhay" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - navigation "Primary" [ref=e7]:
+        - link "About" [ref=e8] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=e9] [cursor=pointer]:
+          - /url: "#journey"
+        - link "Projects" [ref=e10] [cursor=pointer]:
+          - /url: "#projects"
+        - button "Toggle Dark Mode" [ref=e11] [cursor=pointer]
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Currently at Formester
+        - heading "Abhay Bisht" [level=1] [ref=e20]
+        - paragraph [ref=e21]:
+          - text: Software Engineer at
+          - link "Formester" [ref=e22] [cursor=pointer]:
+            - /url: https://formester.com
+        - paragraph [ref=e23]: I build production SaaS platforms, design robust APIs, and integrate AI models to create scalable, high-performance digital products.
+        - generic [ref=e24]:
+          - link "Resume" [ref=e25] [cursor=pointer]:
+            - /url: /Resume_Abhay_V2.pdf
+          - link "GitHub" [ref=e29] [cursor=pointer]:
+            - /url: https://github.com/abhay2133
+          - link "LinkedIn" [ref=e33] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/abhay-21m
+          - link "Email" [ref=e38] [cursor=pointer]:
+            - /url: mailto:abhaybishthestudent@gmail.com
+      - img "Portrait of Abhay Bisht" [ref=e43]
+    - generic [ref=e44]:
+      - heading "About" [level=2] [ref=e45]
+      - paragraph [ref=e49]: I'm a full-stack software engineer specializing in web application development and AI systems. I enjoy building clean, robust, and user-centric digital products, bridging the gap between back-end architecture and front-end user experiences.
+      - generic "Technologies I work with" [ref=e50]:
+        - generic [ref=e51]: React
+        - generic [ref=e54]: Next.js
+        - generic [ref=e57]: Vue.js
+        - generic [ref=e60]: TypeScript
+        - generic [ref=e63]: Tailwind CSS
+        - generic [ref=e66]: Node.js
+        - generic [ref=e69]: Ruby on Rails
+        - generic [ref=e72]: Express.js
+        - generic [ref=e75]: REST APIs
+        - generic [ref=e79]: Webhooks
+        - generic [ref=e84]: PostgreSQL
+        - generic [ref=e87]: MySQL
+        - generic [ref=e90]: Git
+        - generic [ref=e93]: API Design
+        - generic [ref=e99]: System Design
+      - generic [ref=e103]:
+        - heading "Certifications" [level=3] [ref=e104]
+        - generic [ref=e105]:
+          - generic [ref=e106]: Machine Learning – Acmegrade
+          - generic [ref=e115]: JS Algorithms – Freecodecamp
+          - generic [ref=e119]: Responsive Web Design
+    - generic [ref=e123]:
+      - heading "GitHub Activity" [level=2] [ref=e124]
+      - article [ref=e128]
+    - generic [ref=e551]:
+      - heading "Experience" [level=2] [ref=e552]
+      - list [ref=e556]:
+        - listitem [ref=e557]:
+          - generic [ref=e558]:
+            - heading [level=3] [ref=e559]:
+              - img "Formester logo" [ref=e560]
+              - link "Formester" [ref=e561] [cursor=pointer]:
+                - /url: https://formester.com
+            - generic [ref=e562]: July 2025 — Present
+          - paragraph [ref=e563]: Full Stack Engineer
+          - list [ref=e564]:
+            - listitem [ref=e565]: "- Developing and maintaining core features of the Formester online form builder."
+            - listitem [ref=e566]: "- Working across the stack with React, Ruby on Rails, and Tailwind CSS to deliver high-quality code."
+            - listitem [ref=e567]: "- Collaborating with team members to resolve bugs, optimize performance, and release new product features."
+        - listitem [ref=e568]:
+          - generic [ref=e569]:
+            - heading [level=3] [ref=e570]:
+              - img "Acorn Globus logo" [ref=e571]
+              - link "Acorn Globus" [ref=e572] [cursor=pointer]:
+                - /url: https://acornglobus.com
+            - generic [ref=e573]: Feb 2025 — June 2025
+          - paragraph [ref=e574]: Full Stack Intern
+          - list [ref=e575]:
+            - listitem [ref=e576]: "- Built responsive web applications and API integrations for client systems."
+            - listitem [ref=e577]: "- Worked closely with frontend technologies like Vue.js and React to improve user interfaces."
+            - listitem [ref=e578]: "- Participated in agile ceremonies and code reviews to ensure design standards."
+        - listitem [ref=e579]:
+          - generic [ref=e580]:
+            - heading "Excelling Technologies" [level=3] [ref=e581]
+            - generic [ref=e582]: June 2024 — Dec 2024
+          - paragraph [ref=e583]: SDE Intern
+          - list [ref=e584]:
+            - listitem [ref=e585]: "- Contributed to backend services and database optimizations using Node.js and PostgreSQL."
+            - listitem [ref=e586]: "- Designed and documented RESTful API endpoints for system integrations."
+            - listitem [ref=e587]: "- Implemented security protocols and logging mechanisms to monitor system health."
+        - listitem [ref=e588]:
+          - generic [ref=e589]:
+            - heading [level=3] [ref=e590]:
+              - img "CodeQuotient logo" [ref=e591]
+              - link "CodeQuotient" [ref=e592] [cursor=pointer]:
+                - /url: https://codequotient.com
+            - generic [ref=e593]: June 2024 — July 2024
+          - paragraph [ref=e594]: Software Engineering Intern
+          - list [ref=e595]:
+            - listitem [ref=e596]: "- Completed intensive software engineering training focusing on data structures, algorithms, and full-stack development."
+            - listitem [ref=e597]: "- Built several full-stack project prototypes using HTML, CSS, JavaScript, and Node.js."
+    - generic [ref=e598]:
+      - heading "Projects" [level=2] [ref=e599]
+      - paragraph [ref=e604]: A few things I've built — some for clients, some for fun.
+      - list [ref=e605]:
+        - listitem [ref=e606]:
+          - link [ref=e607] [cursor=pointer]:
+            - /url: https://abhay2133.github.io/neuroplan/
+            - heading "NeuroPlan" [level=3] [ref=e609]
+            - paragraph [ref=e613]: An AI-powered Flutter app that converts natural language goals into structured project roadmaps with pluggable AI providers.
+            - generic [ref=e614]:
+              - generic [ref=e615]: Flutter
+              - generic [ref=e618]: Dart
+              - generic [ref=e621]: Firebase
+              - generic [ref=e624]: GROQ AI
+        - listitem [ref=e628]:
+          - link [ref=e629] [cursor=pointer]:
+            - /url: https://github.com/Abhay2133/engineering_day
+            - heading "Engineers Day System" [level=3] [ref=e631]
+            - paragraph [ref=e635]: Event registration system for managing participant data and secure online payments with transaction verification.
+            - generic [ref=e636]:
+              - generic [ref=e637]: Next.js
+              - generic [ref=e640]: PostgreSQL
+              - generic [ref=e643]: Tailwind CSS
+        - listitem [ref=e646]:
+          - link [ref=e647] [cursor=pointer]:
+            - /url: https://github.com/Abhay2133/quiz_bowl
+            - heading "Quiz Bowl Application" [level=3] [ref=e649]
+            - paragraph [ref=e653]: Full-stack quiz platform featuring individual submission handling and JSON-based storage for competitive quiz bowls.
+            - generic [ref=e654]:
+              - generic [ref=e655]: Flutter
+              - generic [ref=e658]: Express.js
+              - generic [ref=e661]: Node.js
+              - generic [ref=e664]: TypeScript
+    - generic [ref=e667]:
+      - heading "Get in touch" [level=2] [ref=e668]
+      - paragraph [ref=e672]: I'm currently available for full-time roles and freelance projects. Feel free to reach out if you want to collaborate or just say hi.
+      - link "Say Hello" [ref=e674] [cursor=pointer]:
+        - /url: mailto:abhaybishthestudent@gmail.com
+  - contentinfo [ref=e678]:
+    - generic [ref=e679]:
+      - list "Social links" [ref=e680]:
+        - listitem [ref=e681]:
+          - link "Email" [ref=e682] [cursor=pointer]:
+            - /url: mailto:abhaybishthestudent@gmail.com
+        - listitem [ref=e683]:
+          - link "GitHub" [ref=e684] [cursor=pointer]:
+            - /url: https://github.com/abhay2133
+        - listitem [ref=e685]:
+          - link "LinkedIn" [ref=e686] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/abhay-21m
+      - generic [ref=e687]: © 2026 Abhay Bisht

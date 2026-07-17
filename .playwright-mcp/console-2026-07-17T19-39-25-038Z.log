@@ -1,0 +1,5 @@
+[     298ms] [ERROR] Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep) @ http://localhost:3000/@id/astro/runtime/client/dev-toolbar/entrypoint.js:0
+[     408ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://logo.clearbit.com/codequotient.com:0
+[     408ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://logo.clearbit.com/acornglobus.com:0
+[     408ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://logo.clearbit.com/formester.com:0
+[     640ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/chunk-XFEUJNJL.js?v=a1ae476f:20102
