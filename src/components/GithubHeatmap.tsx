@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
+import { GitCommit } from "lucide-react";
 
 export function GithubHeatmap() {
   const [mounted, setMounted] = useState(false);
@@ -51,7 +52,7 @@ export function GithubHeatmap() {
 
   return (
     <section id="contributions" className="section">
-      <h2>GitHub Activity</h2>
+      <h2 className="flex items-center gap-2">GitHub Activity <GitCommit className="w-[1.2rem] h-[1.2rem] text-neutral-400" /></h2>
       {!mounted ? (
         renderSkeleton()
       ) : (

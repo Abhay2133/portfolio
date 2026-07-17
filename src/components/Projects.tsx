@@ -20,11 +20,12 @@ const projects = [
 ];
 
 import { SkillIcon } from "./SkillIcon";
+import { FolderCode } from "lucide-react";
 
 export function Projects() {
   return (
     <section id="projects" className="section">
-      <h2>Projects</h2>
+      <h2 className="flex items-center gap-2">Projects <FolderCode className="w-[1.2rem] h-[1.2rem] text-neutral-400" /></h2>
       <p className="section-lead mb-6">
         A few things I've built — some for clients, some for fun.
       </p>

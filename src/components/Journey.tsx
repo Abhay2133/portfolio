@@ -1,3 +1,5 @@
+import { Briefcase } from "lucide-react";
+
 const journey = [
   {
     role: "Full Stack Engineer",
@@ -51,7 +53,7 @@ const journey = [
 export function Journey() {
   return (
     <section id="journey" className="section">
-      <h2>Experience</h2>
+      <h2 className="flex items-center gap-2">Experience <Briefcase className="w-[1.2rem] h-[1.2rem] text-neutral-400" /></h2>
       <ol className="timeline">
         {journey.map((item, index) => (
           <li key={index} className="role">
