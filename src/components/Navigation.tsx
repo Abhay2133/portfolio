@@ -39,8 +39,13 @@ export function Navigation() {
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container">
-        <a href="/" className="brand">
-          abhay<span className="dot">.</span>
+        <a href="/" className="brand-logo">
+          <span className="brand-logo-text">abhay</span>
+          <span className="brand-logo-symbol">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1.5" y="1.5" width="5" height="5" transform="rotate(45 4 4)" fill="currentColor" />
+            </svg>
+          </span>
         </a>
         <nav className="site-nav" aria-label="Primary">
           <a href="#about" className="nav-hide-sm">About</a>

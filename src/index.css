@@ -10,15 +10,15 @@
 
 :root {
   --bg: #faf9f6;
-  --bg-elev: #f3f1ea;
-  --fg: #111111;
-  --fg-muted: #55534e;
-  --fg-subtle: #8a8780;
-  --border: #e7e4dc;
-  --border-strong: #d6d2c7;
-  --accent: #0d7f72;
-  --accent-hover: #0a5f55;
-  --selection: #cdece7;
+  --bg-elev: #f3f0ea;
+  --fg: #1a171d;
+  --fg-muted: #5f5a65;
+  --fg-subtle: #8e8996;
+  --border: #e9e4ed;
+  --border-strong: #d9cedf;
+  --accent: #6366f1; /* Beautiful Indigo */
+  --accent-hover: #4f46e5;
+  --selection: #e0e7ff; /* Light Indigo */
 
   --max-width: 720px;
   --radius: 6px;
@@ -28,16 +28,16 @@
 }
 
 .dark {
-  --bg: #0d0d0d;
-  --bg-elev: #161616;
-  --fg: #f5f4ef;
-  --fg-muted: #a8a59d;
-  --fg-subtle: #6b6862;
-  --border: #242321;
-  --border-strong: #343230;
-  --accent: #5ee2cb;
-  --accent-hover: #8cf0dc;
-  --selection: #0f3933;
+  --bg: #09070f; /* Deep Violet Black */
+  --bg-elev: #13101c;
+  --fg: #f3eff6;
+  --fg-muted: #aca5b5;
+  --fg-subtle: #797184;
+  --border: #1e192a;
+  --border-strong: #332a45;
+  --accent: #a5b4fc; /* Lavender/Light Indigo */
+  --accent-hover: #c7d2fe;
+  --selection: #1e1b4b;
 }
 
 body {
@@ -48,6 +48,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 ::selection {
@@ -107,11 +109,15 @@ h1, h2, h3, h4 {
   height: 64px;
 }
 
-.brand {
+/* Redesigned brand logo */
+.brand-logo {
   font-family: var(--font-mono);
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   border: none;
   color: var(--fg);
   padding: 0.25rem 0.5rem;
@@ -120,13 +126,22 @@ h1, h2, h3, h4 {
   transition: background 0.2s var(--ease);
 }
 
-.brand:hover {
+.brand-logo:hover {
   color: var(--fg);
   background: var(--bg-elev);
 }
 
-.brand .dot {
+.brand-logo-symbol {
   color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+.brand-logo:hover .brand-logo-symbol {
+  transform: rotate(135deg) scale(1.2);
+  color: var(--accent-hover);
 }
 
 .site-nav {
@@ -164,7 +179,6 @@ h1, h2, h3, h4 {
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 2rem;
   border: 1px solid var(--border);
 }
 
@@ -172,7 +186,6 @@ h1, h2, h3, h4 {
   .avatar {
     width: 112px;
     height: 112px;
-    margin-bottom: 1.5rem;
   }
 }
 
@@ -219,7 +232,7 @@ h1, h2, h3, h4 {
   padding: 0.3rem 0.6rem 0.3rem 0.5rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: var(--bg-elev);
 }
 
@@ -514,6 +527,27 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+}
+
+/* Background graphics animations ---------------------------- */
+@keyframes ambient-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-ambient-slow {
+  animation: ambient-drift 25s ease-in-out infinite;
+}
+
+.animate-ambient-slower {
+  animation: ambient-drift 35s ease-in-out infinite reverse;
 }
 
 /* Responsive ------------------------------------------------- */
