@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center relative overflow-x-hidden">
       <Navigation />
-      <main className="w-full max-w-[960px] px-6 sm:px-12 flex flex-col relative z-10">
+      <main className="w-full max-w-[960px] px-6 sm:px-12 flex flex-col relative z-10 pt-[60px]">
         <Hero />
         <Skills />
         <GithubHeatmap />
