@@ -3,6 +3,7 @@ const journey = [
     role: "Full Stack Engineer",
     organization: "Formester",
     url: "https://formester.com",
+    logoUrl: "https://logo.clearbit.com/formester.com",
     period: "July 2025 — Present",
     bullets: [
       "Developing and maintaining core features of the Formester online form builder.",
@@ -13,7 +14,8 @@ const journey = [
   {
     role: "Full Stack Intern",
     organization: "Acorn Globus",
-    url: "#",
+    url: "https://acornglobus.com",
+    logoUrl: "https://logo.clearbit.com/acornglobus.com",
     period: "Feb 2025 — June 2025",
     bullets: [
       "Built responsive web applications and API integrations for client systems.",
@@ -25,6 +27,7 @@ const journey = [
     role: "SDE Intern",
     organization: "Excelling Technologies",
     url: "#",
+    logoUrl: "",
     period: "June 2024 — Dec 2024",
     bullets: [
       "Contributed to backend services and database optimizations using Node.js and PostgreSQL.",
@@ -36,6 +39,7 @@ const journey = [
     role: "Software Engineering Intern",
     organization: "CodeQuotient",
     url: "https://codequotient.com",
+    logoUrl: "https://logo.clearbit.com/codequotient.com",
     period: "June 2024 — July 2024",
     bullets: [
       "Completed intensive software engineering training focusing on data structures, algorithms, and full-stack development.",
@@ -52,7 +56,10 @@ export function Journey() {
         {journey.map((item, index) => (
           <li key={index} className="role">
             <div className="role-header">
-              <h3>
+              <h3 className="flex items-center gap-2">
+                {item.logoUrl && (
+                  <img src={item.logoUrl} alt={`${item.organization} logo`} className="w-5 h-5 rounded-sm object-contain bg-white" />
+                )}
                 {item.url !== "#" ? (
                   <a href={item.url} target="_blank" rel="noopener noreferrer">
                     {item.organization}
