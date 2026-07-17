@@ -11,12 +11,11 @@ const certifications = [
 ];
 
 import { SkillIcon } from "./SkillIcon";
-import { User } from "lucide-react";
 
 export function Skills() {
   return (
     <section id="about" className="section">
-      <h2 className="flex items-center gap-2">About <User className="w-[1.2rem] h-[1.2rem] text-neutral-400" /></h2>
+      <h2>About</h2>
       <p className="section-lead">
         I'm a full-stack software engineer specializing in web application development and AI systems. I enjoy building clean, robust, and user-centric digital products, bridging the gap between back-end architecture and front-end user experiences.
       </p>
