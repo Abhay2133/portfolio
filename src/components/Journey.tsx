@@ -3,7 +3,7 @@ const journey = [
     role: "Full Stack Engineer",
     organization: "Formester",
     url: "https://formester.com",
-    logoUrl: "/logos/formester.svg",
+    logoUrl: "https://www.google.com/s2/favicons?domain=formester.com&sz=128",
     period: "July 2025 — Present",
     bullets: [
       "Developing and maintaining core features of the Formester online form builder.",
@@ -15,7 +15,7 @@ const journey = [
     role: "Full Stack Intern",
     organization: "Acorn Globus",
     url: "https://acornglobus.com",
-    logoUrl: "/logos/acornglobus.svg",
+    logoUrl: "https://www.google.com/s2/favicons?domain=acornglobus.com&sz=128",
     period: "Feb 2025 — June 2025",
     bullets: [
       "Built responsive web applications and API integrations for client systems.",
@@ -27,7 +27,7 @@ const journey = [
     role: "Software Engineering Intern",
     organization: "CodeQuotient",
     url: "https://codequotient.com",
-    logoUrl: "/logos/codequotient.svg",
+    logoUrl: "https://www.google.com/s2/favicons?domain=codequotient.com&sz=128",
     period: "June 2024 — July 2024",
     bullets: [
       "Completed intensive software engineering training focusing on data structures, algorithms, and full-stack development.",
