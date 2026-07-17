@@ -7,7 +7,7 @@ const journey = [
     period: "July 2025 — Present",
     bullets: [
       "Developing and maintaining core features of the Formester online form builder.",
-      "Working across the stack with Ruby on Rails, VueJS, and Bootstrap to deliver high-quality code.",
+      "Working across the stack with React, Ruby on Rails, VueJS, and Bootstrap to deliver high-quality code.",
       "Collaborating with team members to resolve bugs, optimize performance, and release new product features."
     ]
   },
