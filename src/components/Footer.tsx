@@ -1,5 +1,3 @@
-import { Mail, Github, Linkedin } from "lucide-react";
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -8,18 +6,18 @@ export function Footer() {
       <div className="container">
         <ul className="footer-social" aria-label="Social links">
           <li>
-            <a href="mailto:abhaybishthestudent@gmail.com" aria-label="Email">
-              <Mail />
+            <a href="mailto:abhaybishthestudent@gmail.com">
+              Email
             </a>
           </li>
           <li>
-            <a href="https://github.com/abhay2133" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github />
+            <a href="https://github.com/abhay2133" target="_blank" rel="noopener noreferrer">
+              GitHub
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/abhay-21m" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin />
+            <a href="https://www.linkedin.com/in/abhay-21m" target="_blank" rel="noopener noreferrer">
+              LinkedIn
             </a>
           </li>
         </ul>

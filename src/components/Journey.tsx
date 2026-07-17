@@ -51,24 +51,24 @@ export function Journey() {
       <ol className="timeline">
         {journey.map((item, index) => (
           <li key={index} className="role">
-            <div className="role-meta">{item.period}</div>
-            <div className="role-body">
+            <div className="role-header">
               <h3>
                 {item.url !== "#" ? (
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="company-link">
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
                     {item.organization}
                   </a>
                 ) : (
                   item.organization
                 )}
               </h3>
-              <p className="role-title">{item.role}</p>
-              <ul>
-                {item.bullets.map((bullet, bulletIdx) => (
-                  <li key={bulletIdx}>{bullet}</li>
-                ))}
-              </ul>
+              <div className="role-meta">{item.period}</div>
             </div>
+            <p className="role-title">{item.role}</p>
+            <ul>
+              {item.bullets.map((bullet, bulletIdx) => (
+                <li key={bulletIdx}>{bullet}</li>
+              ))}
+            </ul>
           </li>
         ))}
       </ol>

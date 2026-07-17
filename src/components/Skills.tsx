@@ -32,7 +32,7 @@ export function Skills() {
           {certifications.map(cert => (
             <span 
               key={cert} 
-              className="text-xs text-neutral-600 dark:text-neutral-400 px-3 py-1 bg-neutral-100/50 dark:bg-neutral-900/40 border border-neutral-200/50 dark:border-neutral-800/50 rounded-full"
+              className="text-xs text-neutral-700 dark:text-neutral-300 px-3 py-1 bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200 dark:border-neutral-800"
             >
               {cert}
             </span>

@@ -6,10 +6,10 @@ export function Hero() {
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-10">
         {/* Left Column: Text Content */}
         <div className="flex-1 min-w-0">
-          <div className="mb-4">
+          <div className="mb-2">
             <span className="status">Currently at Formester</span>
           </div>
-          <h1>Abhay Bisht</h1>
+          <h1 className="text-neutral-900 dark:text-neutral-100">Abhay Bisht</h1>
           <p className="tagline">
             Software Engineer at{" "}
             <a href="https://formester.com" target="_blank" rel="noopener noreferrer">
@@ -46,8 +46,8 @@ export function Hero() {
             className="avatar"
             src="/college.jpg"
             alt="Portrait of Abhay Bisht"
-            width="140"
-            height="140"
+            width="120"
+            height="120"
           />
         </div>
       </div>

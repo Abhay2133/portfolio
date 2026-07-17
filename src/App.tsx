@@ -6,14 +6,12 @@ import { Journey } from "./components/Journey";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { AmbientBackground } from "./components/AmbientBackground";
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center relative overflow-x-hidden">
-      <AmbientBackground />
       <Navigation />
-      <main className="w-full max-w-[720px] px-6 sm:px-12 flex flex-col relative z-10">
+      <main className="w-full max-w-[960px] px-6 sm:px-12 flex flex-col relative z-10">
         <Hero />
         <Skills />
         <GithubHeatmap />
