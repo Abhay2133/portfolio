@@ -1,0 +1,13 @@
+[     619ms] [LOG] {name: Google, path: google.svg, height: 28} @ https://codequotient.com/js/supercoder.js:128
+[     620ms] [LOG] {name: Palo Alto Networks, path: palo-alto.svg, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[     621ms] [LOG] {name: Adobe Systems, path: adobe.svg, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[     621ms] [LOG] {name: Amazon Web Services, path: amazon-web-services.png, height: 32} @ https://codequotient.com/js/supercoder.js:128
+[     621ms] [LOG] {name: Postman, path: postman.png, height: 28} @ https://codequotient.com/js/supercoder.js:128
+[     621ms] [LOG] {name: DigitalOcean, path: digital-ocean.png, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[     621ms] [LOG] {name: Standard Chartered Bank, path: standard-chartered.svg, height: 32} @ https://codequotient.com/js/supercoder.js:128
+[     622ms] [LOG] {name: Neo Financial, path: neo-financial.svg, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[     622ms] [LOG] {name: Mika, path: mika-health.png, height: 24} @ https://codequotient.com/js/supercoder.js:128
+[     622ms] [LOG] {name: Amazon, path: amazon.svg, height: 24} @ https://codequotient.com/js/supercoder.js:128
+[     622ms] [LOG] {name: Paytm Payments Bank, path: paytm.svg, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[     622ms] [LOG] {name: Playsimple Games, path: play-simple.png, height: 20} @ https://codequotient.com/js/supercoder.js:128
+[    4072ms] [LOG] false @ https://codequotient.com/:1167

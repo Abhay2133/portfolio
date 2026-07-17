@@ -1,0 +1,739 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - link "CodeQuotient logo" [ref=f3e4] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=f3e11]:
+      - list [ref=f3e12]:
+        - listitem [ref=f3e13]:
+          - link "CQ AI Program" [ref=f3e14] [cursor=pointer]:
+            - /url: /cq-ai-program
+        - listitem [ref=f3e15]:
+          - link "School of Technology" [ref=f3e16] [cursor=pointer]:
+            - /url: /cqst
+        - listitem [ref=f3e17]:
+          - link "For Universities" [ref=f3e18] [cursor=pointer]:
+            - /url: /for-universities
+        - listitem [ref=f3e19]:
+          - link "About Us" [ref=f3e20] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=f3e21]:
+          - link "Login" [ref=f3e22] [cursor=pointer]:
+            - /url: /login
+  - main [ref=f3e23]:
+    - generic [ref=f3e24]:
+      - generic [ref=f3e25]:
+        - generic [ref=f3e26]:
+          - generic [ref=f3e27]:
+            - generic [ref=f3e28]: Building AI Talent
+            - text: for the World
+          - heading "We invest in India’s talent potential and integrate them into the world’s best tech companies." [level=1] [ref=f3e29]
+          - link "We are on a mission" [ref=f3e30] [cursor=pointer]:
+            - /url: "#our-mission"
+        - img "Code on screen" [ref=f3e33]
+      - generic [ref=f3e34]:
+        - heading "We are on a mission to make India the talent capital of the world by tapping into the untapped talent potential." [level=1] [ref=f3e35]
+        - generic [ref=f3e37]:
+          - generic [ref=f3e38]:
+            - generic [ref=f3e39]: First Destination
+            - generic [ref=f3e40]: For IT Outsourcing in the World
+          - generic [ref=f3e41]:
+            - generic [ref=f3e42]: $400 Billion +
+            - generic [ref=f3e43]: IT Services Export Industry by 2030
+          - generic [ref=f3e44]:
+            - generic [ref=f3e45]: $225.91 Billion +
+            - generic [ref=f3e46]: Projected AI Market Size by 2030
+          - generic [ref=f3e47]:
+            - generic [ref=f3e48]: 2.3 Million +
+            - generic [ref=f3e49]: AI Job Openings Expected by 2027
+          - generic [ref=f3e50]:
+            - generic [ref=f3e51]: 1 Million +
+            - generic [ref=f3e52]: AI Roles May Go Unfilled Without Upskilling by 2027
+    - generic [ref=f3e53]:
+      - generic [ref=f3e54]:
+        - heading "CodeQuotient Impact That Makes Us Proud" [level=1] [ref=f3e55]
+        - heading "Over the past 10+ years, we've proudly impacted many lives in our journey of meaningful change and growth." [level=5] [ref=f3e56]
+        - generic [ref=f3e57]:
+          - generic [ref=f3e58]:
+            - paragraph [ref=f3e59]: 150+
+            - paragraph [ref=f3e60]: Partner Companies
+            - paragraph [ref=f3e61]: Aligned with our mission, running talent development programs to build their talent pool.
+          - generic [ref=f3e62]:
+            - paragraph [ref=f3e63]: 1000+
+            - paragraph [ref=f3e64]: SuperCoders Deployed
+            - paragraph [ref=f3e65]: Who have trusted us, developed their skills and are now contributing to global tech companies.
+          - generic [ref=f3e66]:
+            - paragraph [ref=f3e67]: 10+
+            - paragraph [ref=f3e68]: Tech Domains
+            - paragraph [ref=f3e69]: Supporting our partner companies across the range of technologies - AI/ML, Full Stack, Data Science, Cloud Computing, and more.
+          - generic [ref=f3e70]:
+            - paragraph [ref=f3e71]: 600+
+            - paragraph [ref=f3e72]: Partner Institutes
+            - paragraph [ref=f3e73]: Across Tier 2/3 cities, which helps us in tapping the talented students from these cities.
+      - generic [ref=f3e75]:
+        - heading "From innovative startups to top tech companies, our SuperCoders are writing the code behind their success" [level=2] [ref=f3e76]
+        - list [ref=f3e77]:
+          - listitem [ref=f3e78]:
+            - img "Google" [ref=f3e79]
+          - listitem [ref=f3e80]:
+            - img "Amazon"
+          - listitem [ref=f3e81]:
+            - img "Digital Ocean"
+          - listitem [ref=f3e82]:
+            - img "Adobe" [ref=f3e83]
+          - listitem [ref=f3e84]:
+            - img "PaloAlto" [ref=f3e85]
+          - listitem [ref=f3e86]:
+            - img "Samsung"
+          - listitem [ref=f3e87]:
+            - img "Gojek"
+          - listitem [ref=f3e88]:
+            - img "McAfee"
+          - listitem [ref=f3e89]:
+            - img "Grab"
+          - listitem [ref=f3e90]:
+            - img "Flipkart"
+          - listitem [ref=f3e91]:
+            - img "Swiggy"
+          - listitem [ref=f3e92]:
+            - img "Amazon Web Services"
+          - listitem [ref=f3e93]:
+            - img "Zomato"
+          - listitem [ref=f3e94]:
+            - img "OYO"
+          - listitem [ref=f3e95]:
+            - img "Expedia"
+          - listitem [ref=f3e96]:
+            - img "Paytm"
+          - listitem [ref=f3e97]:
+            - img "FarMart"
+          - listitem [ref=f3e98]:
+            - img "MakeMyTrip"
+          - listitem [ref=f3e99]:
+            - img "Tata 1mg"
+          - listitem [ref=f3e100]:
+            - img "Scotiabank"
+    - generic [ref=f3e103]:
+      - generic [ref=f3e104]:
+        - heading "For Universities" [level=3] [ref=f3e105]
+        - heading "Plug into a Future-Ready Campus" [level=5] [ref=f3e106]
+        - paragraph [ref=f3e107]: Integrate our industry-aligned modules into your curriculum, including in-demand courses with hands-on learning. Equip your students with the skills and experience needed for high-growth tech careers
+        - link "Know More" [ref=f3e109] [cursor=pointer]:
+          - /url: /for-universities
+      - generic [ref=f3e110]:
+        - generic [ref=f3e111]:
+          - heading "For Students" [level=3] [ref=f3e112]
+          - heading "Launch your AI Journey" [level=5] [ref=f3e113]
+          - paragraph [ref=f3e114]: Join our hands-on AI programs, designed with a focus on real-world projects, expert mentorship, and practical training to prepare you for exciting careers in Artificial Intelligence.
+        - generic [ref=f3e115]:
+          - link "CQ AI Program" [ref=f3e117] [cursor=pointer]:
+            - /url: /cq-ai-program
+          - link "School of Technology" [ref=f3e119] [cursor=pointer]:
+            - /url: /cqst
+    - generic [ref=f3e124]:
+      - paragraph [ref=f3e125]: In Partnership with Universities Committed to Meaningful Change
+      - paragraph [ref=f3e126]: We collaborate with institutions that share our vision of transforming higher education through innovation, hands-on learning, and strong industry integration—preparing students for real-world success.
+    - generic [ref=f3e128]:
+      - list [ref=f3e129]:
+        - listitem [ref=f3e130] [cursor=pointer]
+        - listitem [ref=f3e131] [cursor=pointer]
+        - listitem [ref=f3e132] [cursor=pointer]
+        - listitem [ref=f3e133] [cursor=pointer]
+        - listitem [ref=f3e134] [cursor=pointer]
+        - listitem [ref=f3e135] [cursor=pointer]
+      - generic [ref=f3e138]:
+        - generic [ref=f3e139]:
+          - img "Dr. Rakesh Kumar"
+        - generic [ref=f3e140]:
+          - paragraph [ref=f3e141]: Dr. Rakesh Kumar
+          - paragraph [ref=f3e142]: Chairperson - DCSA, Kurukshetra University
+          - paragraph [ref=f3e143]: We've had a longstanding partnership with CodeQuotient since their early days at Kurukshetra University. It's been rewarding to see our students grow into skilled SuperCoders through their hands-on training. We’re confident CodeQuotient will continue to produce exceptional tech talent and look forward to many more successful collaborations.
+      - button "Previous" [ref=f3e144] [cursor=pointer]
+      - button "Next" [ref=f3e147] [cursor=pointer]
+    - generic [ref=f3e150]:
+      - generic [ref=f3e152]:
+        - generic [ref=f3e153]:
+          - heading "Meet our SuperCoders" [level=2] [ref=f3e154]
+          - text: Our SuperCoders are working at great companies and they love us!
+          - link "View All" [ref=f3e155] [cursor=pointer]:
+            - /url: /supercoders
+        - generic [ref=f3e156]:
+          - generic [ref=f3e160]:
+            - generic [ref=f3e161]: CodeQuotient was the launchpad that propelled my software engineering career to new heights. Their unique approach, where I learned software engineering by building real-world software projects such as a full-stack E-commerce platform and Coding Mania for competitive programming, provided me with invaluable skills. This personalized journey has been the cornerstone of my career growth.
+            - generic [ref=f3e162]: Pavneet Kaur
+            - img "Google" [ref=f3e164]
+          - generic [ref=f3e168]:
+            - generic [ref=f3e169]: CodeQuotient has had a great impact on my career in the tech industry. One Best thing I liked about CodeQuotient is that they take time to teach the logic behind the code.Currently, I'm working as a Senior Staff Engineer at Palo Alto networks, and a lot of the credit goes to Arun sir and all other mentors in CodeQuotient.
+            - generic [ref=f3e170]: Sameer Garg
+            - img "Palo Alto Networks" [ref=f3e172]
+          - generic [ref=f3e176]:
+            - generic [ref=f3e177]: CodeQuotient's blend of practical and theoretical learning transformed my approach to programming. The hands-on projects and mentor support were pivotal in enhancing my coding skills. This program isn't just about landing a job; it's about becoming a well-rounded software engineer.
+            - generic [ref=f3e178]: Balwinder Singh
+            - img "Adobe Systems" [ref=f3e180]
+        - button "Navigate Left" [ref=f3e181] [cursor=pointer]
+        - button "Navigate Right" [ref=f3e184] [cursor=pointer]
+      - generic [ref=f3e188]:
+        - paragraph [ref=f3e189]: News & Updates
+        - generic [ref=f3e190]:
+          - button [ref=f3e192] [cursor=pointer]:
+            - img "Launchpad of your Tech Career" [ref=f3e193]
+          - generic [ref=f3e194]:
+            - link [ref=f3e196] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-officelife-workplaceculture-activity-7451955344777351168-Rz2Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e198]
+              - generic [ref=f3e199]:
+                - paragraph [ref=f3e200]: Weekend Vibes at CodeQuotient
+                - paragraph [ref=f3e201]: www.linkedin.com
+            - link [ref=f3e203] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_supercoders-codequotient-techcareers-activity-7449395227066335232-qAgL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e205]
+              - generic [ref=f3e206]:
+                - paragraph [ref=f3e207]: SuperCoders Drive at SSIPMT, Raipur
+                - paragraph [ref=f3e208]: www.linkedin.com
+            - link [ref=f3e210] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_republicday-teamcelebration-workculture-activity-7421823319517315072-rPGN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e212]
+              - generic [ref=f3e213]:
+                - paragraph [ref=f3e214]: Republic Day Celebrations at CodeQuotient
+                - paragraph [ref=f3e215]: www.linkedin.com
+            - link [ref=f3e217] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_campusrecruitment-campusdrive-codequotient-activity-7433115300151300096-v44-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e219]
+              - generic [ref=f3e220]:
+                - paragraph [ref=f3e221]: Placement Drive at Chitkara University
+                - paragraph [ref=f3e222]: www.linkedin.com
+            - link [ref=f3e224] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_holicelebration-codequotient-festivalofcolors-activity-7435260411245113344-OY_X?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e226]
+              - generic [ref=f3e227]:
+                - paragraph [ref=f3e228]: Holi Celebration at CodeQuotient
+                - paragraph [ref=f3e229]: www.linkedin.com
+            - link [ref=f3e231] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-campushiring-placementdrive-activity-7438092534385377282-fkGc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e233]
+              - generic [ref=f3e234]:
+                - paragraph [ref=f3e235]: Placement Drive at UIET, Kurukshetra University
+                - paragraph [ref=f3e236]: www.linkedin.com
+            - link [ref=f3e238] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-supercoders-campusdrive-activity-7444322976847552512-WaQa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e240]
+              - generic [ref=f3e241]:
+                - paragraph [ref=f3e242]: SuperCoders Drive at Guru Nanak Engineering College, Ludhiana
+                - paragraph [ref=f3e243]: www.linkedin.com
+            - link [ref=f3e245] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-supercoders-campusdrive-activity-7445417260862664704-Vvv9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e247]
+              - generic [ref=f3e248]:
+                - paragraph [ref=f3e249]: SuperCoders Drive Conducted at BCE, Patna
+                - paragraph [ref=f3e250]: www.linkedin.com
+            - link [ref=f3e252] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-mlncollege-campustocorporate-activity-7407028042570665984-jLz4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e254]
+              - generic [ref=f3e255]:
+                - paragraph [ref=f3e256]: MLN College Team Visits CodeQuotient
+                - paragraph [ref=f3e257]: www.linkedin.com
+            - link [ref=f3e259] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_christmascelebration-codequotient-teamculture-activity-7410309265631969280-saYz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e261]
+              - generic [ref=f3e262]:
+                - paragraph [ref=f3e263]: Christmas Celebrations at CodeQuotient
+                - paragraph [ref=f3e264]: www.linkedin.com
+            - link [ref=f3e266] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_ai-dataanalytics-handsonlearning-activity-7414529940722946049-pQ04?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER7iqsBok0mVRcC38OU64P9cwTz5n0ywIA
+              - img "news image" [ref=f3e268]
+              - generic [ref=f3e269]:
+                - paragraph [ref=f3e270]: Workshop on AI & Data Analytics at KUK
+                - paragraph [ref=f3e271]: www.linkedin.com
+            - link [ref=f3e273] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-placementdrive-jmitradaur-activity-7394698585059143680-a_ii?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy
+              - img "news image" [ref=f3e275]
+              - generic [ref=f3e276]:
+                - paragraph [ref=f3e277]: Placement Drive Conducted at JMIT
+                - paragraph [ref=f3e278]: www.linkedin.com
+            - link [ref=f3e280] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7393618009371832320
+              - img "news image" [ref=f3e282]
+              - generic [ref=f3e283]:
+                - paragraph [ref=f3e284]: Industry Connect with TecHindustan
+                - paragraph [ref=f3e285]: www.linkedin.com
+            - link [ref=f3e287] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_cqst-cqstcollege-cqstplacements-activity-7389684726829268993-PQQ-
+              - img "news image" [ref=f3e289]
+              - generic [ref=f3e290]:
+                - paragraph [ref=f3e291]: CQST and Signity Drive Innovation Together
+                - paragraph [ref=f3e292]: www.linkedin.com
+            - link [ref=f3e294] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-placementdrive-kuk-activity-7392088541205508097-Cg07
+              - img "news image" [ref=f3e296]
+              - generic [ref=f3e297]:
+                - paragraph [ref=f3e298]: A Successful Placement Drive at Kurukshetra University
+                - paragraph [ref=f3e299]: www.linkedin.com
+            - link [ref=f3e301] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-lifeatcodequotient-diwalicelebration-activity-7389273911080714240-_SKR
+              - img "news image" [ref=f3e303]
+              - generic [ref=f3e304]:
+                - paragraph [ref=f3e305]: Team CQ Celebrates Diwali 2025
+                - paragraph [ref=f3e306]: www.linkedin.com
+            - link [ref=f3e308] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-placementdrive-campusdrive-activity-7384826087085809664-flFI
+              - img "news image" [ref=f3e310]
+              - generic [ref=f3e311]:
+                - paragraph [ref=f3e312]: CodeQuotient conducted successful placement drive at at MDU, Rohtak 2025
+                - paragraph [ref=f3e313]: www.linkedin.com
+            - link [ref=f3e315] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-placementdrive-himachalpradeshuniversity-activity-7382755888408928256-XhrC
+              - img "news image" [ref=f3e317]
+              - generic [ref=f3e318]:
+                - paragraph [ref=f3e319]: CodeQuotient conducted successful placement drive at Himachal Pradesh University 2025
+                - paragraph [ref=f3e320]: www.linkedin.com
+            - link [ref=f3e322] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_digitaltransformation-highereducation-edtech-activity-7382006941172031488--SKg
+              - img "news image" [ref=f3e324]
+              - generic [ref=f3e325]:
+                - paragraph [ref=f3e326]: Sitare University joined hands with CodeQuotient to leverage our learning and assessment platform
+                - paragraph [ref=f3e327]: www.linkedin.com
+            - link [ref=f3e329] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_nationalcodingweek-evolveai-chitkarauniversity-activity-7380918473826369536-s0eL
+              - img "news image" [ref=f3e331]
+              - generic [ref=f3e332]:
+                - paragraph [ref=f3e333]: CodeQuotient Founder Arun Goyat delivered an expert talk at Chitkara University during National Coding Week 2025.
+                - paragraph [ref=f3e334]: www.linkedin.com
+            - link [ref=f3e336] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_decadeofimpact-techtalentcapital-codequotient-activity-7353401802463080448-kxJD
+              - img "news image" [ref=f3e338]
+              - generic [ref=f3e339]:
+                - paragraph [ref=f3e340]: Celebrating 10 Years of CodeQuotient
+                - paragraph [ref=f3e341]: www.linkedin.com
+            - link [ref=f3e343] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7326883592423329792
+              - img "news image" [ref=f3e345]
+              - generic [ref=f3e346]:
+                - paragraph [ref=f3e347]: Students Completed Internship After Class 12 through SuperCoders Hunt
+                - paragraph [ref=f3e348]: www.linkedin.com
+            - link [ref=f3e350] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7324017313861533697
+              - img "news image" [ref=f3e352]
+              - generic [ref=f3e353]:
+                - paragraph [ref=f3e354]: "Shaping Future Innovators: Inspiring Young Minds at Bal Vikas Progressive School!"
+                - paragraph [ref=f3e355]: www.linkedin.com
+            - link [ref=f3e357] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7321073408849387520/
+              - img "news image" [ref=f3e359]
+              - generic [ref=f3e360]:
+                - paragraph [ref=f3e361]: "From Class 12 to Internship: Interns Onboarded through SuperCoders Hunt"
+                - paragraph [ref=f3e362]: www.linkedin.com
+            - link [ref=f3e364] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7320755837705080832
+              - img "news image" [ref=f3e366]
+              - generic [ref=f3e367]:
+                - paragraph [ref=f3e368]: A Dynamic Exchange of Ideas with Students at Thapar Institute Engineering & Technology.
+                - paragraph [ref=f3e369]: www.linkedin.com
+            - link [ref=f3e371] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7320031083058642944
+              - img "news image" [ref=f3e373]
+              - generic [ref=f3e374]:
+                - paragraph [ref=f3e375]: Inspiring Students of CGC Landran to Explore AI-Driven Careers.
+                - paragraph [ref=f3e376]: www.linkedin.com
+            - link [ref=f3e378] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7302983812521590785
+              - img "news image" [ref=f3e380]
+              - generic [ref=f3e381]:
+                - paragraph [ref=f3e382]: "Proud Moments: Shreya and Vaishali Step Into Tech Careers with Exciting Placements!"
+                - paragraph [ref=f3e383]: www.linkedin.com
+            - link [ref=f3e385] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7293576737127288832
+              - img "news image" [ref=f3e387]
+              - generic [ref=f3e388]:
+                - paragraph [ref=f3e389]: "Celebrating Student Success: Placements Across Top Tech Companies!"
+                - paragraph [ref=f3e390]: www.linkedin.com
+            - link [ref=f3e392] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7283446145945649153
+              - img "news image" [ref=f3e394]
+              - generic [ref=f3e395]:
+                - paragraph [ref=f3e396]: From learning to placement, Bhagyabee Baruah’s journey at CodeQuotient led her to Synergy AI.
+                - paragraph [ref=f3e397]: www.linkedin.com
+            - link [ref=f3e399] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7274370201297559552
+              - img "news image" [ref=f3e401]
+              - generic [ref=f3e402]:
+                - paragraph [ref=f3e403]: Natin Kumar’s success story, from CodeQuotient to Synergy AI, is a testament to hard work and persistence.
+                - paragraph [ref=f3e404]: www.linkedin.com
+            - link [ref=f3e406] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7272558277710757888
+              - img "news image" [ref=f3e408]
+              - generic [ref=f3e409]:
+                - paragraph [ref=f3e410]: Harsh joins Synergy AI, showcasing how perseverance and practical learning at CodeQuotient transformed his career.
+                - paragraph [ref=f3e411]: www.linkedin.com
+            - link [ref=f3e413] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7271833460728578048
+              - img "news image" [ref=f3e415]
+              - generic [ref=f3e416]:
+                - paragraph [ref=f3e417]: From India to Japan – Malkeet Kumar talks about his journey through CodeQuotient and experiences that shaped his successful career.
+                - paragraph [ref=f3e418]: www.linkedin.com
+            - link [ref=f3e420] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7269660576065159168
+              - img "news image" [ref=f3e422]
+              - generic [ref=f3e423]:
+                - paragraph [ref=f3e424]: CodeQuotient alumnus Shivam Sharma, placed at Synergy AI, shares his success story.
+                - paragraph [ref=f3e425]: www.linkedin.com
+            - link [ref=f3e427] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7266692843212038144
+              - img "news image" [ref=f3e429]
+              - generic [ref=f3e430]:
+                - paragraph [ref=f3e431]: Mayank Sharma's journey from CodeQuotient to a thriving career in Japan highlights the power of perseverance.
+                - paragraph [ref=f3e432]: www.linkedin.com
+            - link [ref=f3e434] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:ugcPost:7264519001236529152
+              - img "news image" [ref=f3e436]
+              - generic [ref=f3e437]:
+                - paragraph [ref=f3e438]: From CodeQuotient to FarMart, Yashpal’s dedication has paved the way for a successful career.
+                - paragraph [ref=f3e439]: www.linkedin.com
+            - link [ref=f3e441] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7261996141674733568
+              - img "news image" [ref=f3e443]
+              - generic [ref=f3e444]:
+                - paragraph [ref=f3e445]: Sumit Saini – software developer at BetterCommerce, shared his journey from CodeQuotient to a successful software engineer
+                - paragraph [ref=f3e446]: www.linkedin.com
+            - link [ref=f3e448] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7262790930192052224
+              - img "news image" [ref=f3e450]
+              - generic [ref=f3e451]:
+                - paragraph [ref=f3e452]: Mayank & Malkeet made their journey to Japan with the opportunity to work on exciting projects.
+                - paragraph [ref=f3e453]: www.linkedin.com
+            - link [ref=f3e455] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7260146461131091968
+              - img "news image" [ref=f3e457]
+              - generic [ref=f3e458]:
+                - paragraph [ref=f3e459]: CodeQuotient signed an MoU with United Group of Institutions, Prayagraj and Greater Noida.
+                - paragraph [ref=f3e460]: www.linkedin.com
+            - link [ref=f3e462] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7258334556204785666
+              - img "news image" [ref=f3e464]
+              - generic [ref=f3e465]:
+                - paragraph [ref=f3e466]: CodeQuotient has signed an MoU with Sir Padampat Singhania University, Udaipur.
+                - paragraph [ref=f3e467]: www.linkedin.com
+            - link [ref=f3e469] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7252176696211038208
+              - img "news image" [ref=f3e471]
+              - generic [ref=f3e472]:
+                - paragraph [ref=f3e473]: Parag Agarwal shared his inspiring story of joining CodeQuotient and getting placed at BetterCommerce.
+                - paragraph [ref=f3e474]: www.linkedin.com
+            - link [ref=f3e476] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7252537191682228225
+              - img "news image" [ref=f3e478]
+              - generic [ref=f3e479]:
+                - paragraph [ref=f3e480]: CodeQuotient conducted placement drive at Maharshi Dayanand University Rohtak
+                - paragraph [ref=f3e481]: www.linkedin.com
+            - link [ref=f3e483] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7249641777282887680
+              - img "news image" [ref=f3e485]
+              - generic [ref=f3e486]:
+                - paragraph [ref=f3e487]: CodeQuotient students Shivam Sharma, Chetan Prakash, Natin Kumar, and Harsh - have secured placements at Synergy ML
+                - paragraph [ref=f3e488]: www.linkedin.com
+            - link [ref=f3e490] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7248947183528357888
+              - img "news image" [ref=f3e492]
+              - generic [ref=f3e493]:
+                - paragraph [ref=f3e494]: CodeQuotient conducted placement drive at Himachal Pradesh University, Shimla
+                - paragraph [ref=f3e495]: www.linkedin.com
+            - link [ref=f3e497] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7243840212827586560
+              - img "news image" [ref=f3e499]
+              - generic [ref=f3e500]:
+                - paragraph [ref=f3e501]: SuperCoder Riya shared her journey with CodeQuotient
+                - paragraph [ref=f3e502]: www.linkedin.com
+            - link [ref=f3e504] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7241311119548502016
+              - img "news image" [ref=f3e506]
+              - generic [ref=f3e507]:
+                - paragraph [ref=f3e508]: CodeQuotient conducted placement drive at Kurukshetra University
+                - paragraph [ref=f3e509]: www.linkedin.com
+            - link [ref=f3e511] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7240653018998718464
+              - img "news image" [ref=f3e513]
+              - generic [ref=f3e514]:
+                - paragraph [ref=f3e515]: CodeQuotient conducted placement drive at United Group of Institutions, Pryagraj
+                - paragraph [ref=f3e516]: www.linkedin.com
+            - link [ref=f3e518] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7240245387536523264
+              - img "news image" [ref=f3e520]
+              - generic [ref=f3e521]:
+                - paragraph [ref=f3e522]: CodeQuotient conducted placement drive at JMIT, Radaur
+                - paragraph [ref=f3e523]: www.linkedin.com
+            - link [ref=f3e525] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7239490390179880960
+              - img "news image" [ref=f3e527]
+              - generic [ref=f3e528]:
+                - paragraph [ref=f3e529]: CodeQuotient student Manisha sucessfully placed in Survey Sensum
+                - paragraph [ref=f3e530]: www.linkedin.com
+            - link [ref=f3e532] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7232325931057496064
+              - img "news image" [ref=f3e534]
+              - generic [ref=f3e535]:
+                - paragraph [ref=f3e536]: CodeQuotient students got placed in BetterCommerce
+                - paragraph [ref=f3e537]: www.linkedin.com
+            - link [ref=f3e539] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7219921394552168448
+              - img "news image" [ref=f3e541]
+              - generic [ref=f3e542]:
+                - paragraph [ref=f3e543]: CodeQuotient students got placed in FarMart
+                - paragraph [ref=f3e544]: www.linkedin.com
+            - link [ref=f3e546] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7184138587498496000
+              - img "news image" [ref=f3e548]
+              - generic [ref=f3e549]:
+                - paragraph [ref=f3e550]: CQ Founder - Arun Goyat was invited as the guest of honour at MAIMT, Yamunanagar to grace the Ullaas 2024 celebration.
+                - paragraph [ref=f3e551]: www.linkedin.com
+            - link [ref=f3e553] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7176185466340163584
+              - img "news image" [ref=f3e555]
+              - generic [ref=f3e556]:
+                - paragraph [ref=f3e557]: "CodeQuotient & Chitkara University Organizes Hackathon - Tech Genesis: Coding The Future of Innovation"
+                - paragraph [ref=f3e558]: www.linkedin.com
+            - link [ref=f3e560] [cursor=pointer]:
+              - /url: https://www.shiksha.com/articles/the-global-demand-for-developers-is-soaring-says-arun-goyat-founder-of-codequotient-blogId-156259
+              - img "news image" [ref=f3e562]
+              - generic [ref=f3e563]:
+                - paragraph [ref=f3e564]: The global demand for developers is soaring - Arun Goyat, Founder - CodeQuotient
+                - paragraph [ref=f3e565]: www.shiksha.com
+            - link [ref=f3e567] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7161226155461677056
+              - img "news image" [ref=f3e569]
+              - generic [ref=f3e570]:
+                - paragraph [ref=f3e571]: Industrial visit for school students seeking careers in the high-growth IT industry
+                - paragraph [ref=f3e572]: www.linkedin.com
+            - link [ref=f3e574] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7140200378201018368
+              - img "news image" [ref=f3e576]
+              - generic [ref=f3e577]:
+                - paragraph [ref=f3e578]: Generative AI workshop at Chaudhary Bansi Lal University, Bhiwani
+                - paragraph [ref=f3e579]: www.linkedin.com
+            - link [ref=f3e581] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7127166121840967682
+              - img "news image" [ref=f3e583]
+              - generic [ref=f3e584]:
+                - paragraph [ref=f3e585]: Second CodeMasters'23 hosted by CodeQuotient at Yamunanagar!
+                - paragraph [ref=f3e586]: www.linkedin.com
+            - link [ref=f3e588] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7109518590831132672
+              - img "news image" [ref=f3e590]
+              - generic [ref=f3e591]:
+                - paragraph [ref=f3e592]: First CodeMasters'23 hosted by CodeQuotient at Yamunanagar!
+                - paragraph [ref=f3e593]: www.linkedin.com
+            - link [ref=f3e595] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7071349436941053952
+              - img "news image" [ref=f3e597]
+              - generic [ref=f3e598]:
+                - paragraph [ref=f3e599]: SuperCoders selection drive at Model Institute of Engineering and Technology, Jammu
+                - paragraph [ref=f3e600]: www.linkedin.com
+            - link [ref=f3e602] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7063739959572144129
+              - img "news image" [ref=f3e604]
+              - generic [ref=f3e605]:
+                - paragraph [ref=f3e606]: Campus Selection drive at Kurukshetra University Department of Mathematics
+                - paragraph [ref=f3e607]: www.linkedin.com
+            - link [ref=f3e609] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7061195624284602368
+              - img "news image" [ref=f3e611]
+              - generic [ref=f3e612]:
+                - paragraph [ref=f3e613]: SuperCoders selection drive at Kurukshetra University's Computer Science & Applications Department
+                - paragraph [ref=f3e614]: www.linkedin.com
+            - link [ref=f3e616] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7056141071143120896
+              - img "news image" [ref=f3e618]
+              - generic [ref=f3e619]:
+                - paragraph [ref=f3e620]: Asian College, Patiala for an Industrial Visit to CodeQuotient
+                - paragraph [ref=f3e621]: www.linkedin.com
+            - link [ref=f3e623] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7053634087105769473
+              - img "news image" [ref=f3e625]
+              - generic [ref=f3e626]:
+                - paragraph [ref=f3e627]: CodeQuotient Hosted Codeathon 2.0 at Chitkara University
+                - paragraph [ref=f3e628]: www.linkedin.com
+            - link [ref=f3e630] [cursor=pointer]:
+              - /url: https://www.linkedin.com/posts/codequotient_codequotient-supercoders-rdengineeringcollege-activity-7052561127620153344-HB1a?utm_source=share&utm_medium=member_desktop
+              - img "news image" [ref=f3e632]
+              - generic [ref=f3e633]:
+                - paragraph [ref=f3e634]: SuperCoders Selection Drive at R.D. Engineering College, Ghaziabad
+                - paragraph [ref=f3e635]: www.linkedin.com
+            - link [ref=f3e637] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7052219128803131392
+              - img "news image" [ref=f3e639]
+              - generic [ref=f3e640]:
+                - paragraph [ref=f3e641]: Fee Sponsorship Offered to CodeQuotient's Candidates
+                - paragraph [ref=f3e642]: www.linkedin.com
+            - link [ref=f3e644] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7051127212841848832
+              - img "news image" [ref=f3e646]
+              - generic [ref=f3e647]:
+                - paragraph [ref=f3e648]: SuperCoders Selection drive by CodeQuotient at Govt. P.G. College for Women, Rohtak
+                - paragraph [ref=f3e649]: www.linkedin.com
+            - link [ref=f3e651] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7050033959920885760
+              - img "news image" [ref=f3e653]
+              - generic [ref=f3e654]:
+                - paragraph [ref=f3e655]: Selection drive for the SuperCoders Program at Chaudhary Devi Lal University, Sirsa
+                - paragraph [ref=f3e656]: www.linkedin.com
+            - link [ref=f3e658] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7049235120821575680
+              - img "news image" [ref=f3e660]
+              - generic [ref=f3e661]:
+                - paragraph [ref=f3e662]: SuperCoders Selection Drive by CodeQuotient at Rungta College of Engineering & Technology Kohka-Kurud Bhilai. Chattisgarh
+                - paragraph [ref=f3e663]: www.linkedin.com
+            - link [ref=f3e665] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7048559705815678976
+              - img "news image" [ref=f3e667]
+              - generic [ref=f3e668]:
+                - paragraph [ref=f3e669]: Joint Placement Drive by CodeQuotient and AON at Prestige Institute of Engineering Management and Research, Indore
+                - paragraph [ref=f3e670]: www.linkedin.com
+            - link [ref=f3e672] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7046722266927181824
+              - img "news image" [ref=f3e674]
+              - generic [ref=f3e675]:
+                - paragraph [ref=f3e676]: Campus Partnership with Geeta University
+                - paragraph [ref=f3e677]: www.linkedin.com
+            - link [ref=f3e679] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7046020899015147520
+              - img "news image" [ref=f3e681]
+              - generic [ref=f3e682]:
+                - paragraph [ref=f3e683]: Joint placement drive by CodeQuotient for Top 10 Colleges of Bhopal
+                - paragraph [ref=f3e684]: www.linkedin.com
+            - link [ref=f3e686] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7044208772445057024
+              - img "news image" [ref=f3e688]
+              - generic [ref=f3e689]:
+                - paragraph [ref=f3e690]: SuperCoders Selection Drive at D.A.V. College, Chandigarh, and GGDSD College in Chandigarh
+                - paragraph [ref=f3e691]: www.linkedin.com
+            - link [ref=f3e693] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7042367805962227713
+              - img "news image" [ref=f3e695]
+              - generic [ref=f3e696]:
+                - paragraph [ref=f3e697]: SuperCoders Selection Drive at Mukand Lal National College and Tilak Raj Chadha Institute of Management & Technology (TIMT), Yamunanagar
+                - paragraph [ref=f3e698]: www.linkedin.com
+            - link [ref=f3e700] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7041748975963508736
+              - img "news image" [ref=f3e702]
+              - generic [ref=f3e703]:
+                - paragraph [ref=f3e704]: SuperCoders Selection drive at RKGIT Ghaziabad
+                - paragraph [ref=f3e705]: www.linkedin.com
+            - link [ref=f3e707] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7040932050182320128
+              - img "news image" [ref=f3e709]
+              - generic [ref=f3e710]:
+                - paragraph [ref=f3e711]: SuperCoders Selection drive at Bhagat Phool Singh Mahila University, Khanpur Kalan, Sonipat, Haryana
+                - paragraph [ref=f3e712]: www.linkedin.com
+            - link [ref=f3e714] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/update/urn:li:activity:7038727577338855424
+              - img "news image" [ref=f3e716]
+              - generic [ref=f3e717]:
+                - paragraph [ref=f3e718]: SuperCoders Selection drive at DAV College for Girls ,Yamuna Nagar
+                - paragraph [ref=f3e719]: www.linkedin.com
+            - link [ref=f3e721] [cursor=pointer]:
+              - /url: https://www.etvbharat.com/hindi/state/bhiwani/bca-industry-integrated-course-in-chaudhary-bansilal-university/haryana20230304091415534534808
+              - img "news image" [ref=f3e723]
+              - generic [ref=f3e724]:
+                - paragraph [ref=f3e725]: CBLU Announced India's First Industry Integrated BCA in collaboration with CodeQuotient
+                - paragraph [ref=f3e726]: www.etvbharat.com
+            - link [ref=f3e728] [cursor=pointer]:
+              - /url: https://www.gcwparade.in/documents/trainingplacement
+              - img "news image" [ref=f3e730]
+              - generic [ref=f3e731]:
+                - paragraph [ref=f3e732]: Software Engineer Trainee Internship Joint Drive by CodeQuotient for All Govt. Colleges of Jammu & Kashmir
+                - paragraph [ref=f3e733]: www.gcwparade.in
+            - link [ref=f3e735] [cursor=pointer]:
+              - /url: https://www.kuk.ac.in/userfiles/file/Year2022/News/flyer%20scholarship%20program.pdf
+              - img "news image" [ref=f3e737]
+              - generic [ref=f3e738]:
+                - paragraph [ref=f3e739]: Announcement of INR 1 Crore Scholarship by CodeQuotient
+                - paragraph [ref=f3e740]: www.kuk.ac.in
+            - link [ref=f3e742] [cursor=pointer]:
+              - /url: https://www.bhaskar.com/local/haryana/kurukshetra/news/now-kurukshetra-university-and-code-quotient-together-will-prepare-the-students-for-industry-up-to-26-applications-sought-130332643.html
+              - img "news image" [ref=f3e744]
+              - generic [ref=f3e745]:
+                - paragraph [ref=f3e746]: Kurukshetra University Offers INR 1 Crore Scholarship By CodeQuotient
+                - paragraph [ref=f3e747]: www.bhaskar.com
+            - link [ref=f3e749] [cursor=pointer]:
+              - /url: https://www.jagran.com/haryana/kurukshetra-kuvi-signs-mou-with-code-quotient-pvt-ltd-mohali-22809853.html
+              - img "news image" [ref=f3e751]
+              - generic [ref=f3e752]:
+                - paragraph [ref=f3e753]: Kurukshetra University Signs MoU with CodeQuotient
+                - paragraph [ref=f3e754]: www.jagran.com
+            - link [ref=f3e756] [cursor=pointer]:
+              - /url: https://www.theweek.in/news/india/2022/06/10/codequotient-envisions-to-go-on-campus--plans-pan-india-expansio.html
+              - img "news image" [ref=f3e758]
+              - generic [ref=f3e759]:
+                - paragraph [ref=f3e760]: CodeQuotient envisions to go on-campus, plans PAN India expansion
+                - paragraph [ref=f3e761]: www.theweek.in
+            - link [ref=f3e763] [cursor=pointer]:
+              - /url: https://www.aninews.in/news/business/business/codequotient-partners-with-geeta-university-to-launch-codequotient-academy20220502183515/
+              - img "news image" [ref=f3e765]
+              - generic [ref=f3e766]:
+                - paragraph [ref=f3e767]: CodeQuotient Partners with Geeta University to Launch CodeQuotient Academy
+                - paragraph [ref=f3e768]: www.aninews.in
+            - link [ref=f3e770] [cursor=pointer]:
+              - /url: https://www.businessworld.in/article/CodeQuotient-The-Past-Present-and-Future-with-Arun-Goyat/30-03-2022-424075/
+              - img "news image" [ref=f3e772]
+              - generic [ref=f3e773]:
+                - paragraph [ref=f3e774]: "CodeQuotient: The Past, Present, And Future With Arun Goyat"
+                - paragraph [ref=f3e775]: www.businessworld.in
+            - link [ref=f3e777] [cursor=pointer]:
+              - /url: https://timesofindia.indiatimes.com/blogs/voices/what-do-companies-look-for-in-applicants-while-hiring-for-tech-roles/
+              - img "news image" [ref=f3e779]
+              - generic [ref=f3e780]:
+                - paragraph [ref=f3e781]: What do companies look for in applicants while hiring for tech roles- Arun Goyat
+                - paragraph [ref=f3e782]: timesofindia.indiatimes.com
+            - link [ref=f3e784] [cursor=pointer]:
+              - /url: https://www.aninews.in/news/business/business/codequotient-placed-over-150-supercoders-in-202120220221170035/
+              - img "news image" [ref=f3e786]
+              - generic [ref=f3e787]:
+                - paragraph [ref=f3e788]: CodeQuotient placed over 150 SuperCoders in 2021
+                - paragraph [ref=f3e789]: www.aninews.in
+          - button [ref=f3e791] [cursor=pointer]:
+            - img "Launchpad of your Tech Career" [ref=f3e792]
+    - generic [ref=f3e793]:
+      - generic [ref=f3e795]:
+        - generic [ref=f3e796]:
+          - link [ref=f3e798] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f3e804]: Building AI Talent for the World. We invest in India’s talent potential and integrate them into the world’s best tech companies.
+          - generic [ref=f3e805]:
+            - link [ref=f3e806] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/codequotient/
+            - link "Twitter" [ref=f3e811] [cursor=pointer]:
+              - /url: https://twitter.com/CodeQuotient
+            - link "GitHub" [ref=f3e815] [cursor=pointer]:
+              - /url: https://github.com/codequotient
+            - link "Youtube" [ref=f3e818] [cursor=pointer]:
+              - /url: https://www.youtube.com/@CodeQuotient
+          - generic [ref=f3e822]:
+            - text: Write to us at
+            - link "info@codequotient.com" [ref=f3e823] [cursor=pointer]:
+              - /url: mailto:info@codequotient.com
+        - generic [ref=f3e824]:
+          - heading "Quick Links" [level=4] [ref=f3e825]
+          - list [ref=f3e826]:
+            - listitem [ref=f3e827]:
+              - link "CQ AI Program" [ref=f3e828] [cursor=pointer]:
+                - /url: /cq-ai-program
+            - listitem [ref=f3e829]:
+              - link "School of Technology" [ref=f3e830] [cursor=pointer]:
+                - /url: /cqst
+            - listitem [ref=f3e831]:
+              - link "For Universities" [ref=f3e832] [cursor=pointer]:
+                - /url: /for-universities
+            - listitem [ref=f3e833]:
+              - link "About Us" [ref=f3e834] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e835]:
+              - link "Blog" [ref=f3e836] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=f3e837]:
+          - heading "Contact Us" [level=4] [ref=f3e838]
+          - generic [ref=f3e839]: "Head Office: CodeQuotient Pvt Ltd Plot No 12A, HSIIDC IT Park, Sector 22, Panchkula, Haryana. 134109"
+          - generic [ref=f3e841]: "Campus: CodeQuotient School of Technology, Simla Molana Road, Sector 40, NH 44, Panipat, Haryana - 132103"
+      - generic [ref=f3e843]:
+        - paragraph [ref=f3e844]: © CodeQuotient. All rights reserved.
+        - generic [ref=f3e845]:
+          - link "Privacy Policy" [ref=f3e846] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=f3e847] [cursor=pointer]:
+            - /url: /terms-and-conditions
