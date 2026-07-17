@@ -40,9 +40,13 @@
       margin-bottom: 3px;
     }
     
-    .contact a {
+    a {
       color: #111;
       text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
     }
     
     .title {
@@ -113,6 +117,24 @@
     .skills-category strong {
       font-weight: 600;
     }
+    
+    .icon {
+      width: 10px;
+      height: 10px;
+      margin-left: 2px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    
+    .link-wrapper {
+      display: inline-flex;
+      align-items: center;
+      color: #111;
+      text-decoration: none;
+    }
+    .link-wrapper:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -120,7 +142,19 @@
   <div class="header">
     <div class="name">Abhay Bisht</div>
     <div class="contact">
-      9639147660 | <a href="mailto:abhaybishthestudent@gmail.com">abhaybishthestudent@gmail.com</a> | <a href="https://linkedin.com">LinkedIn</a> | <a href="https://portfolio.com">Portfolio</a>
+      9639147660 | 
+      <a href="mailto:abhaybishthestudent@gmail.com" class="link-wrapper">
+        abhaybishthestudent@gmail.com
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a> | 
+      <a href="https://www.linkedin.com/in/abhay-21m/" class="link-wrapper">
+        LinkedIn
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a> | 
+      <a href="https://abhaybisht.com/?utm_source=resume_pdf" class="link-wrapper">
+        Portfolio
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
     </div>
     <div class="title">Software Engineer | Full Stack & AI Systems</div>
   </div>
@@ -133,7 +167,7 @@
   
   <div class="section-item">
     <div class="item-header">
-      <div class="item-title">Full Stack Engineer | Formester</div>
+      <div class="item-title">Full Stack Engineer | <a href="https://formester.com/" class="link-wrapper">Formester<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></div>
       <div class="item-date">July 2025 – Present</div>
     </div>
     <ul>
@@ -148,7 +182,7 @@
 
   <div class="section-item">
     <div class="item-header">
-      <div class="item-title">Full Stack Intern | Acorn Globus</div>
+      <div class="item-title">Full Stack Intern | <a href="https://acornglobus.com/" class="link-wrapper">Acorn Globus<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></div>
       <div class="item-date">February 2025 – June 2025</div>
     </div>
     <ul>
@@ -172,7 +206,11 @@
   
   <div class="section-item">
     <div class="item-header">
-      <div class="item-title">NeuroPlan | GitHub | Live</div>
+      <div class="item-title">
+        NeuroPlan | 
+        <a href="https://github.com/Abhay2133/neuroplan" class="link-wrapper">GitHub<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a> | 
+        <a href="https://abhay2133.github.io/neuroplan/" class="link-wrapper">Live<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+      </div>
     </div>
     <ul>
       <li>Built NeuroPlan, an AI-powered Flutter app that converts natural language goals into structured project roadmaps.</li>
@@ -183,7 +221,10 @@
 
   <div class="section-item">
     <div class="item-header">
-      <div class="item-title">Quiz Bowl Application | GitHub</div>
+      <div class="item-title">
+        Quiz Bowl Application | 
+        <a href="https://github.com/Abhay2133/quiz_bowl" class="link-wrapper">GitHub<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+      </div>
     </div>
     <ul>
       <li>Flutter frontend with Express.js and TypeScript backend</li>
