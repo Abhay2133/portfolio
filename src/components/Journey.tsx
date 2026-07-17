@@ -24,18 +24,6 @@ const journey = [
     ]
   },
   {
-    role: "SDE Intern",
-    organization: "Excelling Technologies",
-    url: "#",
-    logoUrl: "",
-    period: "June 2024 — Dec 2024",
-    bullets: [
-      "Contributed to backend services and database optimizations using Node.js and PostgreSQL.",
-      "Designed and documented RESTful API endpoints for system integrations.",
-      "Implemented security protocols and logging mechanisms to monitor system health."
-    ]
-  },
-  {
     role: "Software Engineering Intern",
     organization: "CodeQuotient",
     url: "https://codequotient.com",
