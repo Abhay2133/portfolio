@@ -25,7 +25,6 @@ export function Footer() {
         </ul>
         <div className="footer-meta">
           <span>&copy; {currentYear} Abhay Bisht</span>
-          <span>Built with Astro &amp; Tailwind CSS</span>
         </div>
       </div>
     </footer>
