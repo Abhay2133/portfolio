@@ -2,57 +2,76 @@ const journey = [
   {
     role: "Full Stack Engineer",
     organization: "Formester",
-    period: "July 2025 - Present"
+    url: "https://formester.com",
+    period: "July 2025 — Present",
+    bullets: [
+      "Developing and maintaining core features of the Formester online form builder.",
+      "Working across the stack with React, Ruby on Rails, and Tailwind CSS to deliver high-quality code.",
+      "Collaborating with team members to resolve bugs, optimize performance, and release new product features."
+    ]
   },
   {
     role: "Full Stack Intern",
     organization: "Acorn Globus",
-    period: "Feb 2025 - June 2025"
+    url: "#",
+    period: "Feb 2025 — June 2025",
+    bullets: [
+      "Built responsive web applications and API integrations for client systems.",
+      "Worked closely with frontend technologies like Vue.js and React to improve user interfaces.",
+      "Participated in agile ceremonies and code reviews to ensure design standards."
+    ]
   },
   {
     role: "SDE Intern",
     organization: "Excelling Technologies",
-    period: "June 2024 - Dec 2024"
+    url: "#",
+    period: "June 2024 — Dec 2024",
+    bullets: [
+      "Contributed to backend services and database optimizations using Node.js and PostgreSQL.",
+      "Designed and documented RESTful API endpoints for system integrations.",
+      "Implemented security protocols and logging mechanisms to monitor system health."
+    ]
   },
   {
-    role: "Internship",
+    role: "Software Engineering Intern",
     organization: "CodeQuotient",
-    period: "June 2024 - July 2024"
+    url: "https://codequotient.com",
+    period: "June 2024 — July 2024",
+    bullets: [
+      "Completed intensive software engineering training focusing on data structures, algorithms, and full-stack development.",
+      "Built several full-stack project prototypes using HTML, CSS, JavaScript, and Node.js."
+    ]
   }
 ];
 
 export function Journey() {
   return (
-    <section id="journey" className="w-full scroll-animate">
-      <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-6 tracking-tight px-1">
-        Career Journey
-      </h2>
-      
-      <div className="flex flex-col gap-0 relative px-1">
-        {/* Timeline line */}
-        <div className="journey-line absolute left-[15px] top-4 bottom-4 w-[2px] bg-neutral-200 dark:bg-neutral-800 origin-top scale-y-0"></div>
-
+    <section id="journey" className="section">
+      <h2>Experience</h2>
+      <ol className="timeline">
         {journey.map((item, index) => (
-          <div key={index} className="journey-item flex gap-5 sm:gap-6 relative z-10 pb-10 last:pb-0 group">
-            {/* Dot */}
-            <div className="timeline-dot relative mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#fafafa] dark:bg-[#0a0a0a] ring-1 ring-neutral-200 dark:ring-neutral-800 shadow-sm transition-all group-hover:ring-neutral-300 dark:group-hover:ring-neutral-700 scale-0 opacity-0">
-              <div className="h-2 w-2 rounded-full bg-neutral-400 dark:bg-neutral-500 transition-colors group-hover:bg-neutral-600 dark:group-hover:bg-neutral-300"></div>
-            </div>
-            
-            <div className="journey-content flex flex-col opacity-0">
-              <h3 className="text-base tracking-tight font-medium text-neutral-900 dark:text-neutral-100">
-                {item.role}
+          <li key={index} className="role">
+            <div className="role-meta">{item.period}</div>
+            <div className="role-body">
+              <h3>
+                {item.url !== "#" ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="company-link">
+                    {item.organization}
+                  </a>
+                ) : (
+                  item.organization
+                )}
               </h3>
-              <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400 mt-0.5">
-                {item.organization}
-              </p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-500 mt-1">
-                {item.period}
-              </p>
+              <p className="role-title">{item.role}</p>
+              <ul>
+                {item.bullets.map((bullet, bulletIdx) => (
+                  <li key={bulletIdx}>{bullet}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

@@ -1,22 +1,27 @@
-import { Github, Linkedin, Moon, Sun, Car } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Tooltip } from "./ui/Tooltip";
+import { Sun, Moon } from "lucide-react";
 
-interface NavigationProps {
-  onToggleCar: () => void;
-  isCarVisible: boolean;
-}
-
-export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
+export function Navigation() {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     // Check initial preference
-    if (document.documentElement.classList.contains('dark') || 
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDark(true);
+    const checkDark = document.documentElement.classList.contains('dark') || 
+                      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsDark(checkDark);
+    if (checkDark) {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
+
+    // Scroll listener for header border
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -32,63 +37,24 @@ export function Navigation({ onToggleCar, isCarVisible }: NavigationProps) {
   };
 
   return (
-    <nav className="navbar-container flex justify-between items-center w-full sticky top-6 z-50 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md border border-white/60 dark:border-neutral-800/60 p-3 sm:px-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] overflow-hidden">
-      <div className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 px-2 cursor-pointer magnetic-target">
-        Abhay Bisht
-      </div>
-      <div className="flex gap-4 items-center px-2">
-        <Tooltip content={isCarVisible ? "Disable Car" : "Enable Car"}>
-          <button 
-            onClick={onToggleCar}
-            className={`transition-all p-1 rounded-md cursor-pointer magnetic-target ${
-              isCarVisible 
-                ? "text-blue-500 bg-blue-500/10" 
-                : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-            }`}
-            aria-label="Toggle Car Follower"
-          >
-            <Car className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
-        </Tooltip>
-
-        <Tooltip content={isDark ? "Light Mode" : "Dark Mode"}>
+    <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
+      <div className="container">
+        <a href="/" className="brand">
+          abhay<span className="dot">.</span>
+        </a>
+        <nav className="site-nav" aria-label="Primary">
+          <a href="#about" className="nav-hide-sm">About</a>
+          <a href="#journey">Experience</a>
+          <a href="#projects">Projects</a>
           <button 
             onClick={toggleTheme} 
-            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-all p-1 cursor-pointer magnetic-target"
+            className="theme-toggle"
             aria-label="Toggle Dark Mode"
           >
-            {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
+            {isDark ? <Sun className="w-[15px] h-[15px]" /> : <Moon className="w-[15px] h-[15px]" />}
           </button>
-        </Tooltip>
-
-        <Tooltip content="GitHub Profile">
-          <a 
-            href="https://github.com/abhay2133" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:scale-110 transition-all p-1 magnetic-target"
-            aria-label="GitHub"
-          >
-            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
-        </Tooltip>
-
-        <Tooltip content="LinkedIn Profile">
-          <a 
-            href="https://www.linkedin.com/in/abhay-21m" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-neutral-500 hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400 hover:scale-110 transition-all p-1 magnetic-target"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
-        </Tooltip>
+        </nav>
       </div>
-      {/* Scroll Progress Bar */}
-      <div className="absolute bottom-0 left-6 right-6 h-[2px] bg-neutral-200/20 dark:bg-neutral-800/20 rounded-full overflow-hidden">
-        <div className="scroll-progress-bar h-full w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 origin-left scale-x-0"></div>
-      </div>
-    </nav>
+    </header>
   );
 }
