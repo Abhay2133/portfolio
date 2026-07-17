@@ -3,7 +3,7 @@ const projects = [
     title: "NeuroPlan",
     description: "An AI-powered Flutter app that converts natural language goals into structured project roadmaps with pluggable AI providers.",
     tech: ["Flutter", "Dart", "Firebase", "GROQ AI"],
-    link: "https://github.com/Abhay2133/neuroplan"
+    link: "https://abhay2133.github.io/neuroplan/"
   },
   {
     title: "Engineers Day System",
