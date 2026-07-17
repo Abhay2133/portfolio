@@ -21,7 +21,7 @@ export function Hero() {
           </p>
 
           <div className="quick-links">
-            <a href="/Resume_Abhay_V2.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/Resume_Abhay_V3.pdf" target="_blank" rel="noopener noreferrer">
               <FileText className="w-4 h-4" />
               Resume
             </a>
