@@ -3,19 +3,19 @@ const projects = [
     title: "NeuroPlan",
     description: "An AI-powered Flutter app that converts natural language goals into structured project roadmaps with pluggable AI providers.",
     tech: ["Flutter", "Dart", "Firebase", "GROQ AI"],
-    link: "https://github.com/abhay2133"
+    link: "https://github.com/Abhay2133/neuroplan"
   },
   {
     title: "Engineers Day System",
     description: "Event registration system for managing participant data and secure online payments with transaction verification.",
     tech: ["Next.js", "PostgreSQL", "Tailwind CSS"],
-    link: "https://github.com/abhay2133"
+    link: "https://github.com/Abhay2133/engineering_day"
   },
   {
     title: "Quiz Bowl Application",
     description: "Full-stack quiz platform featuring individual submission handling and JSON-based storage for competitive quiz bowls.",
     tech: ["Flutter", "Express.js", "Node.js", "TypeScript"],
-    link: "https://github.com/abhay2133"
+    link: "https://github.com/Abhay2133/quiz_bowl"
   }
 ];
 
