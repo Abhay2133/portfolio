@@ -44,3 +44,6 @@ dist-ssr/
 
 # Astro cache
 .astro/
+
+# MCP Servers
+.playwright-mcp/
