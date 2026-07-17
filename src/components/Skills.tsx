@@ -10,6 +10,8 @@ const certifications = [
   "Responsive Web Design"
 ];
 
+import { SkillIcon } from "./SkillIcon";
+
 export function Skills() {
   return (
     <section id="about" className="section">
@@ -20,7 +22,10 @@ export function Skills() {
       
       <div className="stack" aria-label="Technologies I work with">
         {allSkills.map(skill => (
-          <span key={skill}>{skill}</span>
+          <span key={skill} className="inline-flex items-center gap-1.5">
+            <SkillIcon skill={skill} />
+            {skill}
+          </span>
         ))}
       </div>
 
@@ -32,8 +37,9 @@ export function Skills() {
           {certifications.map(cert => (
             <span 
               key={cert} 
-              className="text-xs text-neutral-700 dark:text-neutral-300 px-3 py-1 bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200 dark:border-neutral-800"
+              className="inline-flex items-center gap-1.5 text-xs text-neutral-700 dark:text-neutral-300 px-3 py-1 bg-neutral-50/50 dark:bg-neutral-900/20 border border-neutral-200 dark:border-neutral-800 rounded-md"
             >
+              <SkillIcon skill={cert} className="text-neutral-500" />
               {cert}
             </span>
           ))}

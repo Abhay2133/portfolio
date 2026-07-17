@@ -19,6 +19,8 @@ const projects = [
   }
 ];
 
+import { SkillIcon } from "./SkillIcon";
+
 export function Projects() {
   return (
     <section id="projects" className="section">
@@ -52,7 +54,10 @@ export function Projects() {
               <p>{project.description}</p>
               <div className="tags">
                 {project.tech.map((t) => (
-                  <span key={t}>{t}</span>
+                  <span key={t} className="inline-flex items-center gap-1.5">
+                    <SkillIcon skill={t} />
+                    {t}
+                  </span>
                 ))}
               </div>
             </a>
